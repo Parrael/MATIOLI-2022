@@ -7,7 +7,7 @@ namespace ProvaDiagnostica
     class Solucao
     {
         
-        Exercicio 1.1
+        //Exercicio 1.1
         public void Ex1()
         {
             int cp1, qp1;
@@ -43,7 +43,7 @@ namespace ProvaDiagnostica
         public void Ex2()
         {
             double pi = 3.14159, area, raio;
-            Console.WriteLine("Exercicio 2");
+            Console.WriteLine("Exercicio 1.2");
 
             Console.WriteLine("\nInsira o valor do raio da circunferência");
             raio = int.Parse(Console.ReadLine());
@@ -54,6 +54,24 @@ namespace ProvaDiagnostica
         //Exercicio 2.1
         public void Ex3()
         {
+            Console.WriteLine("Exercicio 2.1");
+            int code, quant;
+            float total;
+
+            Console.WriteLine("\nInsira o código do seu pedido: ");
+            code = int.Parse(Console.ReadLine());
+            Console.WriteLine("\nInsira a quantidade do item: ");
+            quant = int.Parse(Console.ReadLine());
+            switch (code)
+            {
+                case 1:
+                    total += 16;
+
+                    
+
+
+            }
+
 
         }
     }

@@ -52,7 +52,7 @@ namespace exercEstruturaSequencial
             diferenca = (a * b - c * d);
 
             Console.WriteLine("\nDiferença entre os numeros ({0} e {1}) e ({2} e {3}) é de: {4}", a, b, c, d, diferenca);
-            //testeee
+            
 
         }
     }

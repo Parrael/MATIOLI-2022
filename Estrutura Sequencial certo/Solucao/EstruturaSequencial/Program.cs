@@ -12,7 +12,7 @@ namespace EstruturaSequencial
             //ExSeq.ex3();
             //ExSeq.ex4();
             //ExSeq.ex5();
-            ExSeq.ex6();
+            //ExSeq.ex6();
             
         }
     }

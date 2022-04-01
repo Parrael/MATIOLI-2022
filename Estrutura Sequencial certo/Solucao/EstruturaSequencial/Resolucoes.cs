@@ -15,7 +15,7 @@ namespace EstruturaSequencial
             Console.WriteLine("\nInsira o segundo numero inteiro que será somado.");
             n2 = int.Parse(Console.ReadLine());
 
-            n1 += n1 + n2;
+            n1 += n2;
 
             Console.WriteLine("Soma = {0}", n1);
 

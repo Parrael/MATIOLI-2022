@@ -8,7 +8,7 @@ namespace EstruturaSequencial
         {
             Resolucoes ExSeq = new Resolucoes();
             
-            ExSeq.ex2();
+            ExSeq.ex4();
 
         }
     }

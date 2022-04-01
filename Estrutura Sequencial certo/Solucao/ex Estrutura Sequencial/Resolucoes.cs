@@ -6,18 +6,25 @@ namespace EstruturaSequencial
 {
     class Resolucoes
     {
-        public void ex2()
+        public void ex4()
         {
-            Console.WriteLine("\n\n\t\tEXERCÍCIO 2\n\n");
+            Console.WriteLine("\n\n\t\tEXERCÍCIO 4\n\n");
 
-            double n1, pi;
-            Console.WriteLine("\nInsira o raio do seu círculo: ");
-            n1 = double.Parse(Console.ReadLine());
+            int nFunc, nHrs;
+            float vHrs, salario;
+            //numero/código do funcionário, numero de horas trabalhadas, valor de cada hora trabalhada e o salário final.
 
-            pi = 3.14159;
-            n1 = pi * n1 * n1;
+            Console.WriteLine("\nInsira o numero/código do funcionário: ");
+            nFunc = int.Parse(Console.ReadLine());
+            Console.WriteLine("\nInsira o numero de horas trabalhadas: ");
+            nHrs = int.Parse(Console.ReadLine());
+            Console.WriteLine("\nInsira o valor de cada hora trabalhada: ");
+            vHrs = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nA área desse cículo será de: {0:F4}", n1);
+            salario = nHrs * vHrs;
+
+            Console.WriteLine("\nO funcionário número {0} deverá receber R${1:F2} como salário\n", nFunc, salario);
+
         }
     }
 }

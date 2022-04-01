@@ -6,18 +6,37 @@ namespace EstruturaSequencial
 {
     class Resolucoes
     {
-        public void ex2()
+        public void ex6()
         {
-            Console.WriteLine("\n\n\t\tEXERCÍCIO 2\n\n");
+            Console.WriteLine("\n\n\t\tEXERCÍCIO 6\n\n");
+            float a, b, c;
+            double result, pi = 3.14159;
+            Console.WriteLine("\nInsira o primeiro valor: ");
+            a = float.Parse(Console.ReadLine());
+            Console.WriteLine("\nInsira o segundo valor: ");
+            b = float.Parse(Console.ReadLine());
+            Console.WriteLine("\nInsira o terceiro valor: ");
+            c = float.Parse(Console.ReadLine());
 
-            double n1, pi;
-            Console.WriteLine("\nInsira o raio do seu círculo: ");
-            n1 = double.Parse(Console.ReadLine());
+            result = (a * c) / 2;
 
-            pi = 3.14159;
-            n1 = pi * n1 * n1;
+            Console.WriteLine("\n Triângulo (A como base e C como altura: \t {0:F3}", result);
 
-            Console.WriteLine("\nA área desse cículo será de: {0:F4}", n1);
+            result = c * c * pi;
+
+            Console.WriteLine("\n Círculo (C como raio): \t\t\t {0:F3}", result);
+
+            result = (a + b) / 2 * c;
+
+            Console.WriteLine("\n Trapézio (A e B como base e C como altura): \t {0:F3}", result);
+
+            result = b * b;
+
+            Console.WriteLine("\n Quadrado (B como lado):  \t\t\t {0:F3}", result);
+
+            result = a * b;
+
+            Console.WriteLine("\n Retângulo (A e B como lados): \t\t\t {0:F3}", result);
         }
     }
 }

@@ -1,0 +1,15 @@
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\bin\Debug\net6.0\ex Estrutura Sequencial.exe
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\bin\Debug\net6.0\ex Estrutura Sequencial.deps.json
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\bin\Debug\net6.0\ex Estrutura Sequencial.runtimeconfig.json
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\bin\Debug\net6.0\ex Estrutura Sequencial.dll
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\bin\Debug\net6.0\ex Estrutura Sequencial.pdb
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.csproj.AssemblyReference.cache
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.AssemblyInfoInputs.cache
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.AssemblyInfo.cs
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.csproj.CoreCompileInputs.cache
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.dll
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\refint\ex Estrutura Sequencial.dll
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.pdb
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ex Estrutura Sequencial.genruntimeconfig.cache
+C:\Repositórios Git\Estrutura Sequencial certo\Solucao\ex Estrutura Sequencial\obj\Debug\net6.0\ref\ex Estrutura Sequencial.dll

@@ -254,8 +254,9 @@ namespace Calculadora
         {
             if (!txtDisplay.Text.Trim().Equals(String.Empty))
             {
-                n1 = Convert.ToDouble(txtDisplay.Text.Trim());
-                result = n1*-1;
+                double var; 
+                var = Convert.ToDouble(txtDisplay.Text.Trim());
+                result = var*-1;
                 txtDisplay.Text = result.ToString();
                 pressionouIgual = true;
             }

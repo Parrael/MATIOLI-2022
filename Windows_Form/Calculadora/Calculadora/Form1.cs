@@ -63,6 +63,12 @@ namespace Calculadora
                 case "*":
                     result = n1 * n2;
                     break;
+
+                case "x^y":
+
+                    result = Math.Pow(n1, n2);
+                    break;
+                    
             }
             txtDisplay.Text = result.ToString();
         }
@@ -196,6 +202,69 @@ namespace Calculadora
         private void btnC_Click(object sender, EventArgs e)
         {
             LimparCampos();
+        }
+
+        private void btnEleva_Click(object sender, EventArgs e)
+        {
+            if (!txtDisplay.Text.Trim().Equals(String.Empty))
+            {
+                n1 = Convert.ToDouble(txtDisplay.Text.Trim());
+                result = n1 * n1;
+                txtDisplay.Text = result.ToString();
+                pressionouIgual = true;
+            }
+        }
+
+        private void btnPower_Click(object sender, EventArgs e)
+        {
+            adicionarOperacao("x^y");
+        }
+
+        private void btnSqrt_Click(object sender, EventArgs e)
+        {
+            if (!txtDisplay.Text.Trim().Equals(String.Empty))
+            {
+                n1 = Convert.ToDouble(txtDisplay.Text.Trim());
+                result = Math.Sqrt(n1);
+                txtDisplay.Text = result.ToString();
+                pressionouIgual = true;
+            }
+        }
+
+        private void btnFracao_Click(object sender, EventArgs e)
+        {
+            if (!txtDisplay.Text.Trim().Equals(String.Empty))
+            {
+                n1 = Convert.ToDouble(txtDisplay.Text.Trim());
+                result = 1 / n1;
+                txtDisplay.Text = result.ToString();
+                pressionouIgual = true;
+            }
+        }
+
+        private void btnCE_Click(object sender, EventArgs e)
+        {
+            if (pressionouIgual)
+            LimparCampos();
+            else
+            txtDisplay.Clear();
+        }
+
+        private void btnInversao_Click(object sender, EventArgs e)
+        {
+            if (!txtDisplay.Text.Trim().Equals(String.Empty))
+            {
+                n1 = Convert.ToDouble(txtDisplay.Text.Trim());
+                result = n1*-1;
+                txtDisplay.Text = result.ToString();
+                pressionouIgual = true;
+            }
+        }
+
+        private void btnBackspace_Click(object sender, EventArgs e)
+        {
+            if (txtDisplay.TextLength > 0)
+                txtDisplay.Text = txtDisplay.Text.Remove(txtDisplay.Text.Length - 1, 1);
         }
     }
 

@@ -251,14 +251,18 @@ namespace Calculadora
         }
 
         private void btnInversao_Click(object sender, EventArgs e)
-        {
+        {                   
             if (!txtDisplay.Text.Trim().Equals(String.Empty))
             {
+                txtDisplay.Text = Convert.ToString(-1 * Convert.ToDouble(txtDisplay.Text));
+                /*
                 double var; 
                 var = Convert.ToDouble(txtDisplay.Text.Trim());
-                result = var*-1;
-                txtDisplay.Text = result.ToString();
+                result = -1*var;
+                txtDisplay.Text = Convert.ToString(result);
                 pressionouIgual = true;
+                */
+                
             }
         }
 
@@ -266,6 +270,11 @@ namespace Calculadora
         {
             if (txtDisplay.TextLength > 0)
                 txtDisplay.Text = txtDisplay.Text.Remove(txtDisplay.Text.Length - 1, 1);
+        }
+
+        private void txtDisplay_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

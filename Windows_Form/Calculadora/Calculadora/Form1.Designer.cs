@@ -180,12 +180,15 @@ namespace Calculadora
             // 
             // txtDisplay
             // 
+            this.txtDisplay.Enabled = false;
             this.txtDisplay.Location = new System.Drawing.Point(6, 12);
             this.txtDisplay.MaxLength = 10;
             this.txtDisplay.Name = "txtDisplay";
-            this.txtDisplay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtDisplay.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDisplay.Size = new System.Drawing.Size(234, 20);
             this.txtDisplay.TabIndex = 24;
+            this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDisplay.TextChanged += new System.EventHandler(this.txtDisplay_TextChanged);
             // 
             // btnPlus
             // 
@@ -214,6 +217,7 @@ namespace Calculadora
             this.btnInversao.Font = new System.Drawing.Font("Liberation Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInversao.Location = new System.Drawing.Point(126, 190);
             this.btnInversao.Name = "btnInversao";
+            this.btnInversao.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnInversao.Size = new System.Drawing.Size(34, 32);
             this.btnInversao.TabIndex = 14;
             this.btnInversao.Text = "+/-";
@@ -334,7 +338,7 @@ namespace Calculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(246, 235);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.btnC);
@@ -364,6 +368,8 @@ namespace Calculadora
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCalculadora";
             this.Text = "Calculadora";
             this.Load += new System.EventHandler(this.frmCalculadora_Load);

@@ -116,13 +116,26 @@ namespace SisFin
 
         }
 
+
+
+        //Métodos para abrir apena 1 janela por vez:
+
+        private void fCategoria_Closed(object sender, FormClosedEventArgs e)
+        {
+            fCategoria = null;
+        }
+
         private void subMenuCategoria_Click(object sender, EventArgs e)
         {
             if (fCategoria == null)
             {
                 fCategoria = new frmCategoria();
-                fCategoria.MdiParent = this;
+                fCategoria.FormClosed += new FormClosedEventHandler(fCategoria_Closed);
+            } else
+            {
+                fCategoria.Activate();
             }
+            fCategoria.MdiParent = this;
             fCategoria.Show();
 
         }

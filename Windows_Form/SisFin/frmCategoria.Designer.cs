@@ -30,15 +30,15 @@ namespace SisFin
         private void InitializeComponent()
         {
             this.grpCategoria = new System.Windows.Forms.GroupBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.rdReceita = new System.Windows.Forms.RadioButton();
-            this.rdDespesa = new System.Windows.Forms.RadioButton();
-            this.chkStatus = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
+            this.rdDespesa = new System.Windows.Forms.RadioButton();
+            this.rdReceita = new System.Windows.Forms.RadioButton();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -64,46 +64,42 @@ namespace SisFin
             this.grpCategoria.TabIndex = 0;
             this.grpCategoria.TabStop = false;
             // 
-            // txtNome
+            // label4
             // 
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(201, 19);
-            this.txtNome.MaxLength = 50;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(246, 26);
-            this.txtNome.TabIndex = 0;
-            this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 150);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Status";
             // 
-            // txtDescricao
+            // label3
             // 
-            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(201, 66);
-            this.txtDescricao.MaxLength = 100;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(547, 26);
-            this.txtDescricao.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Tipo";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // rdReceita
+            // label2
             // 
-            this.rdReceita.AutoSize = true;
-            this.rdReceita.Location = new System.Drawing.Point(201, 115);
-            this.rdReceita.Name = "rdReceita";
-            this.rdReceita.Size = new System.Drawing.Size(62, 17);
-            this.rdReceita.TabIndex = 2;
-            this.rdReceita.TabStop = true;
-            this.rdReceita.Text = "Receita";
-            this.rdReceita.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(40, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Descrição";
             // 
-            // rdDespesa
+            // label1
             // 
-            this.rdDespesa.AutoSize = true;
-            this.rdDespesa.Location = new System.Drawing.Point(312, 115);
-            this.rdDespesa.Name = "rdDespesa";
-            this.rdDespesa.Size = new System.Drawing.Size(67, 17);
-            this.rdDespesa.TabIndex = 3;
-            this.rdDespesa.TabStop = true;
-            this.rdDespesa.Text = "Despesa";
-            this.rdDespesa.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nome";
             // 
             // chkStatus
             // 
@@ -117,42 +113,46 @@ namespace SisFin
             this.chkStatus.Text = "Ativa";
             this.chkStatus.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // rdDespesa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nome";
+            this.rdDespesa.AutoSize = true;
+            this.rdDespesa.Location = new System.Drawing.Point(312, 115);
+            this.rdDespesa.Name = "rdDespesa";
+            this.rdDespesa.Size = new System.Drawing.Size(67, 17);
+            this.rdDespesa.TabIndex = 3;
+            this.rdDespesa.TabStop = true;
+            this.rdDespesa.Text = "Despesa";
+            this.rdDespesa.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // rdReceita
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Descrição";
+            this.rdReceita.AutoSize = true;
+            this.rdReceita.Location = new System.Drawing.Point(201, 115);
+            this.rdReceita.Name = "rdReceita";
+            this.rdReceita.Size = new System.Drawing.Size(62, 17);
+            this.rdReceita.TabIndex = 2;
+            this.rdReceita.TabStop = true;
+            this.rdReceita.Text = "Receita";
+            this.rdReceita.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // txtDescricao
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Tipo";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Location = new System.Drawing.Point(201, 66);
+            this.txtDescricao.MaxLength = 100;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(547, 26);
+            this.txtDescricao.TabIndex = 1;
             // 
-            // label4
+            // txtNome
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Status";
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(201, 19);
+            this.txtNome.MaxLength = 50;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(246, 26);
+            this.txtNome.TabIndex = 0;
+            this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnNovo
             // 
@@ -162,6 +162,7 @@ namespace SisFin
             this.btnNovo.TabIndex = 1;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.novoRegistro);
             // 
             // btnAlterar
             // 
@@ -171,6 +172,7 @@ namespace SisFin
             this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.altCadastro);
             // 
             // btnExcluir
             // 
@@ -189,6 +191,7 @@ namespace SisFin
             this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.salvarCadastro);
             // 
             // btnCancelar
             // 
@@ -198,6 +201,7 @@ namespace SisFin
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.cancCadastro);
             // 
             // frmCategoria
             // 

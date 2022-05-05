@@ -38,6 +38,15 @@ namespace SisFin
             rdDespesa.Checked = true;
             chkStatus.Checked = true;
 
+            grpCategoria.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnCancelar.Visible = false;
+            btnSalvar.Visible = false;
+            btnExcluir.Visible = true;
+            btnNovo.Enabled = true;
+            Insercao = false;
+            Edicao = false;
+
         }
         public void limparCampos()
         {
@@ -78,6 +87,24 @@ namespace SisFin
         private void salvarCadastro(object sender, EventArgs e)
         {
             MessageBox.Show("Registro gravado com sucesso!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+                grpCategoria.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnCancelar.Visible = false;
+                btnSalvar.Visible = false;
+                btnExcluir.Visible = true;
+                btnNovo.Enabled = true;
+                Insercao = false;
+                Edicao = false;
+            
+        }
+
+        //Precisa ver oq colocar nesse cancelar, pq o ideal seria ele descartar as mudanças não salvas
+        private void cancCadastro(object sender, EventArgs e)
+        {
+            DialogResult resp;
+            resp = MessageBox.Show("Deseja descartar mudanças?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (resp == DialogResult.Yes)
             {
                 grpCategoria.Enabled = false;
                 btnAlterar.Enabled = true;
@@ -88,16 +115,15 @@ namespace SisFin
                 Insercao = false;
                 Edicao = false;
             }
-            
         }
 
-        private void cancCadastro(object sender, EventArgs e)
+        private void exclCadastro(object sender, EventArgs e)
         {
             DialogResult resp;
-            resp = MessageBox.Show("Deseja descartar mudanças?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            resp = MessageBox.Show("Deseja excluir cadastro?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (resp == DialogResult.Yes)
             {
-
+                limparCampos();
             }
         }
     }

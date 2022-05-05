@@ -56,6 +56,9 @@ namespace SisFin
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuCategoria = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuConta = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,9 +86,6 @@ namespace SisFin
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cadMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuCategoria = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuConta = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -318,6 +318,28 @@ namespace SisFin
             this.statusBarToolStripMenuItem.Text = "&Barra de Status";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
             // 
+            // cadMenu
+            // 
+            this.cadMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subMenuCategoria,
+            this.subMenuConta});
+            this.cadMenu.Name = "cadMenu";
+            this.cadMenu.Size = new System.Drawing.Size(82, 23);
+            this.cadMenu.Text = "&Cadastros";
+            // 
+            // subMenuCategoria
+            // 
+            this.subMenuCategoria.Name = "subMenuCategoria";
+            this.subMenuCategoria.Size = new System.Drawing.Size(137, 24);
+            this.subMenuCategoria.Text = "Categoria";
+            this.subMenuCategoria.Click += new System.EventHandler(this.subMenuCategoria_Click);
+            // 
+            // subMenuConta
+            // 
+            this.subMenuConta.Name = "subMenuConta";
+            this.subMenuConta.Size = new System.Drawing.Size(137, 24);
+            this.subMenuConta.Text = "Conta";
+            // 
             // toolsMenu
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -329,7 +351,7 @@ namespace SisFin
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
             this.optionsToolStripMenuItem.Text = "&Opções";
             // 
             // windowsMenu
@@ -398,6 +420,7 @@ namespace SisFin
             this.helpMenu.Name = "helpMenu";
             this.helpMenu.Size = new System.Drawing.Size(56, 23);
             this.helpMenu.Text = "&Ajuda";
+            this.helpMenu.Click += new System.EventHandler(this.helpMenu_Click);
             // 
             // contentsToolStripMenuItem
             // 
@@ -531,28 +554,6 @@ namespace SisFin
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // cadMenu
-            // 
-            this.cadMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subMenuCategoria,
-            this.subMenuConta});
-            this.cadMenu.Name = "cadMenu";
-            this.cadMenu.Size = new System.Drawing.Size(82, 23);
-            this.cadMenu.Text = "&Cadastros";
-            // 
-            // subMenuCategoria
-            // 
-            this.subMenuCategoria.Name = "subMenuCategoria";
-            this.subMenuCategoria.Size = new System.Drawing.Size(180, 24);
-            this.subMenuCategoria.Text = "Categoria";
-            this.subMenuCategoria.Click += new System.EventHandler(this.subMenuCategoria_Click);
-            // 
-            // subMenuConta
-            // 
-            this.subMenuConta.Name = "subMenuConta";
-            this.subMenuConta.Size = new System.Drawing.Size(180, 24);
-            this.subMenuConta.Text = "Conta";
             // 
             // MenuPrincipal
             // 

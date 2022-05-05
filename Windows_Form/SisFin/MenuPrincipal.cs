@@ -139,5 +139,10 @@ namespace SisFin
             fCategoria.Show();
 
         }
+
+        private void helpMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

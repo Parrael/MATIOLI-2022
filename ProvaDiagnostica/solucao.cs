@@ -56,7 +56,7 @@ namespace ProvaDiagnostica
         {
             Console.WriteLine("Exercicio 2.1");
             int code, quant;
-            float total;
+            double total=0;
 
             Console.WriteLine("\nInsira o código do seu pedido: ");
             code = int.Parse(Console.ReadLine());
@@ -65,12 +65,22 @@ namespace ProvaDiagnostica
             switch (code)
             {
                 case 1:
-                    total += 16;
-
-                    
-
-
+                    total += 16 * quant;
+                    break;
+                case 2:
+                    total += 25 * quant;
+                    break;
+                case 3:
+                    total += 20 * quant;
+                    break;
+                case 4:
+                    total += 6.5 * quant;
+                    break;
+                case 5:
+                    total += 8 * quant;
+                    break;
             }
+            Console.WriteLine("\nO valor total da sua compra foi de R${0:F2}", total)
 
 
         }

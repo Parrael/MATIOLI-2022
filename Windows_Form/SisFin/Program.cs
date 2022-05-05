@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calculadora
+namespace SisFin
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Calculadora
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCalculadora());
+            Application.Run(new MenuPrincipal());
         }
     }
 }

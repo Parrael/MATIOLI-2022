@@ -49,7 +49,7 @@ namespace SisFin
             // 
             // grpCategoria
             // 
-            this.grpCategoria.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.grpCategoria.BackColor = System.Drawing.Color.LightCyan;
             this.grpCategoria.Controls.Add(this.label4);
             this.grpCategoria.Controls.Add(this.label3);
             this.grpCategoria.Controls.Add(this.label2);
@@ -209,6 +209,7 @@ namespace SisFin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 245);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
@@ -222,6 +223,7 @@ namespace SisFin
             this.Name = "frmCategoria";
             this.ShowIcon = false;
             this.Text = "Categoria";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FecharForm);
             this.Load += new System.EventHandler(this.frmCategoria_Load);
             this.grpCategoria.ResumeLayout(false);
             this.grpCategoria.PerformLayout();

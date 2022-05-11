@@ -87,16 +87,16 @@ namespace SisFin
         private void salvarCadastro(object sender, EventArgs e)
         {
             MessageBox.Show("Registro gravado com sucesso!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-                grpCategoria.Enabled = false;
-                btnAlterar.Enabled = true;
-                btnCancelar.Visible = false;
-                btnSalvar.Visible = false;
-                btnExcluir.Visible = true;
-                btnNovo.Enabled = true;
-                Insercao = false;
-                Edicao = false;
-            
+
+            grpCategoria.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnCancelar.Visible = false;
+            btnSalvar.Visible = false;
+            btnExcluir.Visible = true;
+            btnNovo.Enabled = true;
+            Insercao = false;
+            Edicao = false;
+
         }
 
         //Precisa ver oq colocar nesse cancelar, pq o ideal seria ele descartar as mudanças não salvas
@@ -116,7 +116,6 @@ namespace SisFin
                 Edicao = false;
             }
         }
-
         private void exclCadastro(object sender, EventArgs e)
         {
             DialogResult resp;

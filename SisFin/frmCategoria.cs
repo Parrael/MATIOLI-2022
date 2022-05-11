@@ -87,8 +87,8 @@ namespace SisFin
         private void salvarCadastro(object sender, EventArgs e)
         {
             MessageBox.Show("Registro gravado com sucesso!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-                grpCategoria.Enabled = false;
+            txtNome.Focus();
+            grpCategoria.Enabled = false;
                 btnAlterar.Enabled = true;
                 btnCancelar.Visible = false;
                 btnSalvar.Visible = false;
@@ -96,7 +96,8 @@ namespace SisFin
                 btnNovo.Enabled = true;
                 Insercao = false;
                 Edicao = false;
-            
+               
+
         }
 
         //Precisa ver oq colocar nesse cancelar, pq o ideal seria ele descartar as mudanças não salvas

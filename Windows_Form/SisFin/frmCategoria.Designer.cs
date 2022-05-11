@@ -44,7 +44,9 @@ namespace SisFin
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.dgCategoria = new System.Windows.Forms.DataGridView();
             this.grpCategoria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // grpCategoria
@@ -106,7 +108,7 @@ namespace SisFin
             this.chkStatus.AutoSize = true;
             this.chkStatus.Checked = true;
             this.chkStatus.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkStatus.Location = new System.Drawing.Point(201, 150);
+            this.chkStatus.Location = new System.Drawing.Point(132, 150);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Size = new System.Drawing.Size(50, 17);
             this.chkStatus.TabIndex = 4;
@@ -116,7 +118,7 @@ namespace SisFin
             // rdDespesa
             // 
             this.rdDespesa.AutoSize = true;
-            this.rdDespesa.Location = new System.Drawing.Point(312, 115);
+            this.rdDespesa.Location = new System.Drawing.Point(243, 115);
             this.rdDespesa.Name = "rdDespesa";
             this.rdDespesa.Size = new System.Drawing.Size(67, 17);
             this.rdDespesa.TabIndex = 3;
@@ -127,7 +129,7 @@ namespace SisFin
             // rdReceita
             // 
             this.rdReceita.AutoSize = true;
-            this.rdReceita.Location = new System.Drawing.Point(201, 115);
+            this.rdReceita.Location = new System.Drawing.Point(132, 115);
             this.rdReceita.Name = "rdReceita";
             this.rdReceita.Size = new System.Drawing.Size(62, 17);
             this.rdReceita.TabIndex = 2;
@@ -138,7 +140,7 @@ namespace SisFin
             // txtDescricao
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(201, 66);
+            this.txtDescricao.Location = new System.Drawing.Point(132, 66);
             this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(547, 26);
@@ -147,16 +149,16 @@ namespace SisFin
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(201, 19);
+            this.txtNome.Location = new System.Drawing.Point(132, 19);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(246, 26);
+            this.txtNome.Size = new System.Drawing.Size(297, 26);
             this.txtNome.TabIndex = 0;
             this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(12, 209);
+            this.btnNovo.Location = new System.Drawing.Point(14, 492);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(75, 23);
             this.btnNovo.TabIndex = 1;
@@ -166,7 +168,7 @@ namespace SisFin
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(102, 209);
+            this.btnAlterar.Location = new System.Drawing.Point(104, 492);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 2;
@@ -176,7 +178,7 @@ namespace SisFin
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(188, 209);
+            this.btnExcluir.Location = new System.Drawing.Point(190, 492);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 3;
@@ -186,7 +188,7 @@ namespace SisFin
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(278, 209);
+            this.btnSalvar.Location = new System.Drawing.Point(280, 492);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 4;
@@ -196,7 +198,7 @@ namespace SisFin
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(713, 209);
+            this.btnCancelar.Location = new System.Drawing.Point(715, 492);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -204,11 +206,21 @@ namespace SisFin
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.cancCadastro);
             // 
+            // dgCategoria
+            // 
+            this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCategoria.Location = new System.Drawing.Point(14, 209);
+            this.dgCategoria.Name = "dgCategoria";
+            this.dgCategoria.Size = new System.Drawing.Size(774, 277);
+            this.dgCategoria.TabIndex = 6;
+            
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 245);
+            this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.dgCategoria);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnExcluir);
@@ -221,9 +233,11 @@ namespace SisFin
             this.Name = "frmCategoria";
             this.ShowIcon = false;
             this.Text = "Categoria";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fechaForm);
             this.Load += new System.EventHandler(this.frmCategoria_Load);
             this.grpCategoria.ResumeLayout(false);
             this.grpCategoria.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +259,6 @@ namespace SisFin
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView dgCategoria;
     }
 }

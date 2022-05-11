@@ -14,11 +14,14 @@ namespace SisFin
     {
         private bool Insercao = false;
         private bool Edicao = false;
-        
-        
+        private Categoria categoria = new Categoria();
+        private List<Categoria> lstCategoria = new List<Categoria>();
+        private BindingSource bsCategoria;
+    
         public frmCategoria()
         {
             InitializeComponent();
+            lstCategoria = categoria.GeraCategorias();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -34,8 +37,9 @@ namespace SisFin
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             txtNome.Text = "Combustível";
-            txtDescricao.Text = "Comsumo de cobustível";
-            rdDespesa.Checked = true;
+            txtDescricao.Text = "Consumo de combustível";
+            rdDespesa.Checked = false;
+            rdReceita.Checked = false;
             chkStatus.Checked = true;
 
             grpCategoria.Enabled = false;
@@ -43,10 +47,45 @@ namespace SisFin
             btnCancelar.Visible = false;
             btnSalvar.Visible = false;
             btnExcluir.Visible = true;
+            btnExcluir.Enabled = true;
             btnNovo.Enabled = true;
             Insercao = false;
             Edicao = false;
 
+            dgCategoria.ColumnCount = 5;
+            dgCategoria.AutoGenerateColumns = false;
+            dgCategoria.Columns[0].Width = 50;
+            dgCategoria.Columns[0].HeaderText = "ID";
+            dgCategoria.Columns[0].DataPropertyName = "Id";
+            dgCategoria.Columns[0].Visible = false;
+            dgCategoria.Columns[1].Width = 200;
+            dgCategoria.Columns[1].HeaderText = "NOME";
+            dgCategoria.Columns[1].DataPropertyName = "Nome";
+            dgCategoria.Columns[2].Width = 400;
+            dgCategoria.Columns[2].HeaderText = "DESCRIÇÃO";
+            dgCategoria.Columns[2].DataPropertyName = "Descricao";
+            dgCategoria.Columns[3].Width = 50;
+            dgCategoria.Columns[3].HeaderText = "TIPO";
+            dgCategoria.Columns[3].DataPropertyName = "Tipo";
+            dgCategoria.Columns[4].Width = 50;
+            dgCategoria.Columns[4].HeaderText = "STATUS";
+            dgCategoria.Columns[4].DataPropertyName = "Status";
+
+            dgCategoria.AllowUserToAddRows = false;
+            dgCategoria.AllowUserToDeleteRows = false;
+            dgCategoria.MultiSelect = false;
+            dgCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            carregaGridCategoria();
+        }
+
+        public void carregaGridCategoria()
+        {
+            bsCategoria = new BindingSource();
+            bsCategoria.DataSource = lstCategoria;
+            //dgCategoria.Rows.Clear()
+            dgCategoria.DataSource = bsCategoria;
+            dgCategoria.Refresh();
         }
         public void limparCampos()
         {
@@ -59,8 +98,11 @@ namespace SisFin
 
         private void novoRegistro(object sender, EventArgs e)
         {
-            grpCategoria.Enabled = true;
             limparCampos();
+            rdDespesa.Checked = false;
+            rdReceita.Checked = false;
+            chkStatus.Checked = true;
+            grpCategoria.Enabled = true;
             txtNome.Focus();
             btnAlterar.Enabled = false;
             btnCancelar.Visible = true;
@@ -68,19 +110,19 @@ namespace SisFin
             btnExcluir.Visible = false;
             btnNovo.Enabled = false;
             Insercao = true;
-            Edicao = true;
+            Edicao = false;
         }
 
         private void altCadastro(object sender, EventArgs e)
         {
             grpCategoria.Enabled = true;
             txtNome.Focus();
-            btnAlterar.Enabled = false;
+            btnAlterar.Enabled = false; 
             btnCancelar.Visible = true;
             btnSalvar.Visible = true;
             btnExcluir.Visible = false;
             btnNovo.Enabled = false;
-            Insercao = true;
+            Insercao = false;
             Edicao = true;
         }
 
@@ -96,6 +138,7 @@ namespace SisFin
                 btnNovo.Enabled = true;
                 Insercao = false;
                 Edicao = false;
+                btnNovo.Focus();
             
         }
 
@@ -119,12 +162,28 @@ namespace SisFin
 
         private void exclCadastro(object sender, EventArgs e)
         {
+
             DialogResult resp;
-            resp = MessageBox.Show("Deseja excluir cadastro?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            resp = MessageBox.Show("Deseja excluir cadastro?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (resp == DialogResult.Yes)
             {
+                MessageBox.Show("Registro excluído com sucesso!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limparCampos();
+
+                btnNovo.Focus();
             }
         }
+        private void fechaForm(object sender, FormClosingEventArgs e)
+        {
+            if (Edicao || Insercao)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Não é possível sair sem salvar os dados!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }
+
+
+

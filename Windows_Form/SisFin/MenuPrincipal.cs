@@ -144,5 +144,10 @@ namespace SisFin
         {
 
         }
+
+        private void btnSobre(object sender, EventArgs e)
+        {
+            MessageBox.Show("201289 ~ Isabela Silvestre \n201286 ~ Raphael Parra", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

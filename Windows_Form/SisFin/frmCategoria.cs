@@ -24,16 +24,6 @@ namespace SisFin
             lstCategoria = categoria.GeraCategorias();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             txtNome.Text = "Combustível";
@@ -44,11 +34,14 @@ namespace SisFin
 
             grpCategoria.Enabled = false;
             btnAlterar.Enabled = true;
+            btnAlterar.Visible = true;
             btnCancelar.Visible = false;
             btnSalvar.Visible = false;
             btnExcluir.Visible = true;
             btnExcluir.Enabled = true;
             btnNovo.Enabled = true;
+            btnNovo.Visible = true;
+
             Insercao = false;
             Edicao = false;
 
@@ -99,10 +92,10 @@ namespace SisFin
         private void novoRegistro(object sender, EventArgs e)
         {
             limparCampos();
+            grpCategoria.Enabled = true;
             rdDespesa.Checked = false;
             rdReceita.Checked = false;
             chkStatus.Checked = true;
-            grpCategoria.Enabled = true;
             txtNome.Focus();
             btnAlterar.Enabled = false;
             btnCancelar.Visible = true;
@@ -136,6 +129,7 @@ namespace SisFin
                 btnSalvar.Visible = false;
                 btnExcluir.Visible = true;
                 btnNovo.Enabled = true;
+                btnNovo.Focus();
                 Insercao = false;
                 Edicao = false;
                 btnNovo.Focus();
@@ -155,6 +149,8 @@ namespace SisFin
                 btnSalvar.Visible = false;
                 btnExcluir.Visible = true;
                 btnNovo.Enabled = true;
+                btnNovo.Focus();
+
                 Insercao = false;
                 Edicao = false;
             }
@@ -169,9 +165,11 @@ namespace SisFin
             {
                 MessageBox.Show("Registro excluído com sucesso!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limparCampos();
-
+                MessageBox.Show("Registro excluído com sucesso!", "Aviso de Sistema!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnNovo.Focus();
             }
+
+
         }
         private void fechaForm(object sender, FormClosingEventArgs e)
         {

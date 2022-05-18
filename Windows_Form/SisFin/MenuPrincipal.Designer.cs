@@ -454,7 +454,8 @@ namespace SisFin
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
-            this.aboutToolStripMenuItem.Text = "&Sobre ... ...";
+            this.aboutToolStripMenuItem.Text = "&Sobre";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.btnSobre);
             // 
             // toolStrip
             // 

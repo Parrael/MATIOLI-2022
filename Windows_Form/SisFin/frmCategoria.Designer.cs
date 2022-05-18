@@ -83,7 +83,6 @@ namespace SisFin
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Tipo";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -154,7 +153,6 @@ namespace SisFin
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(297, 26);
             this.txtNome.TabIndex = 0;
-            this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnNovo
             // 

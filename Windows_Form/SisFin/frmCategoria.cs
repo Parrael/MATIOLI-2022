@@ -59,8 +59,11 @@ namespace SisFin
 
         private void novoRegistro(object sender, EventArgs e)
         {
-            grpCategoria.Enabled = true;
             limparCampos();
+            grpCategoria.Enabled = true;
+            rdDespesa.Checked = false;
+            rdReceita.Checked = false;
+            chkStatus.Checked = true;
             txtNome.Focus();
             btnAlterar.Enabled = false;
             btnCancelar.Visible = true;
@@ -68,7 +71,7 @@ namespace SisFin
             btnExcluir.Visible = false;
             btnNovo.Enabled = false;
             Insercao = true;
-            Edicao = true;
+            Edicao = false;
         }
 
         private void altCadastro(object sender, EventArgs e)
@@ -80,7 +83,7 @@ namespace SisFin
             btnSalvar.Visible = true;
             btnExcluir.Visible = false;
             btnNovo.Enabled = false;
-            Insercao = true;
+            Insercao = false;
             Edicao = true;
         }
 
@@ -94,6 +97,7 @@ namespace SisFin
                 btnSalvar.Visible = false;
                 btnExcluir.Visible = true;
                 btnNovo.Enabled = true;
+                btnNovo.Focus();
                 Insercao = false;
                 Edicao = false;
             
@@ -112,6 +116,8 @@ namespace SisFin
                 btnSalvar.Visible = false;
                 btnExcluir.Visible = true;
                 btnNovo.Enabled = true;
+                btnNovo.Focus();
+
                 Insercao = false;
                 Edicao = false;
             }
@@ -124,6 +130,18 @@ namespace SisFin
             if (resp == DialogResult.Yes)
             {
                 limparCampos();
+                MessageBox.Show("Registro excluído com sucesso!", "Aviso de Sistema!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnNovo.Focus();
+            }
+
+
+        }
+        private void fechaForm(object sender, FormClosingEventArgs e)
+        {
+            if (Edicao || Insercao)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Não é possível sair sem salvar os dados!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

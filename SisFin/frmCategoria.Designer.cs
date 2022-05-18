@@ -225,6 +225,7 @@ namespace SisFin
             this.dgCategoria.Name = "dgCategoria";
             this.dgCategoria.Size = new System.Drawing.Size(776, 233);
             this.dgCategoria.TabIndex = 6;
+            this.dgCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategoria_CellContentClick);
             // 
             // frmCategoria
             // 

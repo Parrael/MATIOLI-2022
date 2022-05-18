@@ -19,9 +19,9 @@ namespace SisFin
         private List<Categoria> lstCategoria = new List<Categoria>();
         private BindingSource bsCategoria;
 
-        
-        
-        
+
+
+
         public frmCategoria()
         {
             InitializeComponent();
@@ -64,9 +64,9 @@ namespace SisFin
             dgCategoria.AllowUserToDeleteRows = false;
             dgCategoria.MultiSelect = false;
             dgCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        
 
-           
+
+
             grpCategoria.Enabled = false;
             btnAlterar.Enabled = true;
             btnCancelar.Visible = false;
@@ -79,6 +79,28 @@ namespace SisFin
             carregaGridCategoria();
         }
 
+
+            //if (Insercao){
+
+            //  var nome = txtNome.Text.Trim();
+            //var descr = txtDescricao.Text.Trim();
+            //var tipo = txtReceita.Cheked ? 1 : 2;
+            //var status = txtStatus.Cheked ? 1 : 2;
+            //categoria.AddToList(3,nome,descr,tipo,status);
+            //  }
+
+            //if(Edicao){
+            // Categoria ct = 1stCategoria.Find(ItemActivation => item.Nome == txtNome.Text.Trim());
+            //if (ct ! = null){
+            //
+            //ct.Descricao = txtDescricao.Text.Trim();
+            //ct.Tipo = rdReceita.Cheked ? 1 : 2;
+            //ct.Status = chkStatus.Cheked ? 1 : 0;
+            //}
+            //
+
+
+        
         private void carregaGridCategoria()
         {
             bsCategoria = new BindingSource();
@@ -86,6 +108,7 @@ namespace SisFin
             //dgCategoria.Rows.Clear();
             dgCategoria.DataSource = bsCategoria;
             dgCategoria.Refresh();
+            txtNome.Enabled = true;
         }
         public void limparCampos()
         {
@@ -109,6 +132,7 @@ namespace SisFin
             Insercao = true;
             Edicao = false;
             chkStatus.Checked = true;
+            
         }
 
         private void altCadastro(object sender, EventArgs e)
@@ -122,13 +146,32 @@ namespace SisFin
             btnNovo.Enabled = false;
             Insercao = false;
             Edicao = true;
+
         }
 
         private void salvarCadastro(object sender, EventArgs e)
         {
             MessageBox.Show("Registro gravado com sucesso!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-              
-                grpCategoria.Enabled = false;
+           if (Insercao){
+
+             var nome = txtNome.Text.Trim();
+            var descr = txtDescricao.Text.Trim();
+            var tipo = rdReceita.Checked ? 1 : 2;
+            var status = chkStatus.Checked ? 1 : 2;
+            categoria.AddTolist(3,nome,descr,tipo,status);
+             }
+
+            if(Edicao){
+             Categoria ct = lstCategoria.Find(item => item.Nome == txtNome.Text.Trim());
+            if (ct != null){
+            
+            ct.Descricao = txtDescricao.Text.Trim();
+            ct.Tipo = rdReceita.Checked ? 1 : 2;
+            ct.Status = chkStatus.Checked ? 1 : 0;
+            }
+            
+
+            grpCategoria.Enabled = false;
                 btnAlterar.Enabled = true;
                 btnCancelar.Visible = false;
                 btnSalvar.Visible = false;
@@ -183,6 +226,11 @@ namespace SisFin
                 e.Cancel = true;
                 MessageBox.Show("Fique aqui", "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void dgCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

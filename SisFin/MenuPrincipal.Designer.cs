@@ -458,7 +458,7 @@ namespace SisFin
             // 
             // toolStrip
             // 
-            this.toolStrip.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.toolStrip.BackColor = System.Drawing.Color.Azure;
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripButton,
             this.openToolStripButton,

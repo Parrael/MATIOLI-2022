@@ -21,16 +21,6 @@ namespace SisFin
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             txtNome.Text = "Combustível";
@@ -40,10 +30,14 @@ namespace SisFin
 
             grpCategoria.Enabled = false;
             btnAlterar.Enabled = true;
+            btnAlterar.Visible = true;
             btnCancelar.Visible = false;
             btnSalvar.Visible = false;
             btnExcluir.Visible = true;
+            btnExcluir.Enabled = true;
             btnNovo.Enabled = true;
+            btnNovo.Visible = true;
+
             Insercao = false;
             Edicao = false;
 

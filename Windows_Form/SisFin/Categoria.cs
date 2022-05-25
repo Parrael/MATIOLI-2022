@@ -41,7 +41,7 @@ namespace SisFin
         public List<Categoria> GeraCategorias()
         {
             Categoria _cat1 = new Categoria(1, "Salário", "Salário da UNICAMP", 1, 1);
-            Categoria _cat2 = new Categoria(1, "Combustível", "Despesas com combustível", 2, 1);
+            Categoria _cat2 = new Categoria(2, "Combustível", "Gasto de combustível", 2, 1);
             _lstCategoria.Add(_cat1);
             _lstCategoria.Add(_cat2);
             return _lstCategoria;

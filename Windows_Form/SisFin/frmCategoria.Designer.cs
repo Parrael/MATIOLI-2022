@@ -206,6 +206,7 @@ namespace SisFin
             // 
             // dgCategoria
             // 
+            this.dgCategoria.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategoria_RowEnter);
             this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCategoria.Location = new System.Drawing.Point(14, 209);
             this.dgCategoria.Name = "dgCategoria";

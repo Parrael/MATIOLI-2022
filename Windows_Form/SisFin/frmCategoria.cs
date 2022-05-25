@@ -27,7 +27,7 @@ namespace SisFin
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             txtNome.Text = "Combustível";
-            txtDescricao.Text = "Despesas com combustível";
+            txtDescricao.Text = "Gasto de combustível";
             rdDespesa.Checked = false;
             rdReceita.Checked = false;
             chkStatus.Checked = true;

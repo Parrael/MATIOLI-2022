@@ -211,7 +211,6 @@ namespace SisFin
             this.dgCategoria.Name = "dgCategoria";
             this.dgCategoria.Size = new System.Drawing.Size(774, 277);
             this.dgCategoria.TabIndex = 6;
-            
             // 
             // frmCategoria
             // 

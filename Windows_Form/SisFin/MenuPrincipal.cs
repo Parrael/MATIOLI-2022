@@ -13,7 +13,8 @@ namespace SisFin
     public partial class MenuPrincipal : Form
     {
         private int childFormNumber = 0;
-        private static frmCategoria fCategoria; 
+        private static frmCategoria fCategoria;
+        private static frmConta fConta;
 
         public MenuPrincipal()
         {
@@ -125,20 +126,7 @@ namespace SisFin
             fCategoria = null;
         }
 
-        private void subMenuCategoria_Click(object sender, EventArgs e)
-        {
-            if (fCategoria == null)
-            {
-                fCategoria = new frmCategoria();
-                fCategoria.FormClosed += new FormClosedEventHandler(fCategoria_Closed);
-            } else
-            {
-                fCategoria.Activate();
-            }
-            fCategoria.MdiParent = this;
-            fCategoria.Show();
 
-        }
 
         private void helpMenu_Click(object sender, EventArgs e)
         {
@@ -148,6 +136,43 @@ namespace SisFin
         private void btnSobre(object sender, EventArgs e)
         {
             MessageBox.Show("201289 ~ Isabela Silvestre \n201286 ~ Raphael Parra", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void fConta_Closed(object sender, FormClosedEventArgs e)
+        {
+            fConta = null;
+        }
+        private void subMenuCategoria_Click(object sender, EventArgs e)
+        {
+            if (fCategoria == null)
+            {
+                fCategoria = new frmCategoria();
+                fCategoria.FormClosed += new FormClosedEventHandler(fCategoria_Closed);
+            }
+            else
+            {
+                fCategoria.Activate();
+            }
+            fCategoria.MdiParent = this;
+            fCategoria.Show();
+
+        }
+
+        private void subMenuConta_Click(object sender, EventArgs e)
+        {
+            if (fConta == null)
+            {
+                fConta = new frmConta();
+                fConta.FormClosed += new FormClosedEventHandler(fConta_Closed);
+            }
+            else
+            {
+                fConta.Activate();
+            }
+            fConta.MdiParent = this;
+            fConta.Show();
+
+           
         }
     }
 }

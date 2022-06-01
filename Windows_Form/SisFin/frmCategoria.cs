@@ -216,6 +216,7 @@ namespace SisFin
 
 
         }
+
         private void dgCategoria_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (dgCategoria.RowCount > 0)
@@ -243,6 +244,7 @@ namespace SisFin
                 MessageBox.Show("Não é possível sair sem salvar os dados!", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
     }
 }

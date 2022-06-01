@@ -244,6 +244,10 @@ namespace SisFin
             }
         }
 
+        private void dgCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

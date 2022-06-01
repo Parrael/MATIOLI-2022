@@ -10,10 +10,12 @@ using System.Windows.Forms;
 
 namespace SisFin
 {
+ 
     public partial class MenuPrincipal : Form
     {
         private int childFormNumber = 0;
-        private static frmCategoria fCategoria; 
+        private static frmCategoria fCategoria;
+        private static FrmConta fConta;
 
         public MenuPrincipal()
         {
@@ -124,6 +126,10 @@ namespace SisFin
         {
             fCategoria = null;
         }
+        private void fConta_Closed(object sender, FormClosedEventArgs e)
+        {
+            fConta = null;
+        }
 
         private void subMenuCategoria_Click(object sender, EventArgs e)
         {
@@ -148,6 +154,22 @@ namespace SisFin
         private void btnSobre(object sender, EventArgs e)
         {
             MessageBox.Show("201289 ~ Isabela Silvestre \n201286 ~ Raphael Parra", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void subMenuConta_Click_1(object sender, EventArgs e)
+        {
+            if (fConta == null)
+            {
+                fConta = new FrmConta();
+                fConta.FormClosed += new FormClosedEventHandler(fConta_Closed);
+            }
+            else
+            {
+                fConta.Activate();
+            }
+            fConta.MdiParent = this;
+            fConta.Show();
+
         }
     }
 }

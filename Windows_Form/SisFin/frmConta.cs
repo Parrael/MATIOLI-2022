@@ -33,12 +33,14 @@ namespace SisFin
             dgConta.MultiSelect = false;
             dgConta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+
+            dgConta.ColumnCount = 4;
             dgConta.AutoGenerateColumns = false;
             dgConta.Columns[0].Width = 50;
             dgConta.Columns[0].HeaderText = "ID";
             dgConta.Columns[0].DataPropertyName = "Id";
             /*dgConta.Columns[0].Visible = false;*/
-            dgConta.Columns[1].Width = 250;
+            dgConta.Columns[1].Width = 200;
             dgConta.Columns[1].HeaderText = "NOME";
             dgConta.Columns[1].DataPropertyName = "Nome";
             dgConta.Columns[2].Width = 400;
@@ -48,15 +50,17 @@ namespace SisFin
             dgConta.Columns[3].Visible = false;
             dgConta.Columns[3].HeaderText = "STATUS";
             dgConta.Columns[3].DataPropertyName = "Status";
-
             carregaGridConta();
-            /*carregaComboCategoria();*/
+
+            carregaComboCategoria();
         }
 
         private void carregaGridConta()
         {
             bsConta = new BindingSource();
             bsConta.DataSource = lstConta;
+            dgConta.DataSource = bsConta;
+            dgConta.Refresh();
             
         }
 
@@ -85,10 +89,13 @@ namespace SisFin
         {
             if (dgConta.RowCount > 0)
             {
+                int _id = Convert.ToInt32(dgConta.Rows[e.RowIndex].Cells[0].Value);
+                carregaComboCategoria(_id);
+                
                 txtNome.Text = dgConta.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtDesc.Text = dgConta.Rows[e.RowIndex].Cells[2].Value.ToString();
 
-                if (Convert.ToInt16(dgConta.Rows[e.RowIndex].Cells[4].Value.ToString()) == 1)
+                if (Convert.ToInt16(dgConta.Rows[e.RowIndex].Cells[3].Value.ToString()) == 1)
                     chkStatus.Checked = true;
                 else
                     chkStatus.Checked = false;

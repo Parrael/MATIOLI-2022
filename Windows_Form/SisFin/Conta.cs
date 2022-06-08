@@ -8,11 +8,12 @@ namespace SisFin
 {
     class Conta
     {
-        private int id { get; set; }
-        private string nome { get; set; }
-        private string descricao { get; set; }
-        private int categoria { get; set; }
-        private int status { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public int Categoria { get; set; }
+        public int Status { get; set; }
+
         private List<Conta> _lstConta = new List<Conta>();
 
         public Conta()
@@ -21,7 +22,15 @@ namespace SisFin
 
         public Conta(int id, string nome, string descricao, int categoria,int status)
         {
-
+            Id = id;
+            Nome = nome;
+            Descricao = descricao;
+            Categoria = categoria;      
+            Status = status;
+        }
+        public void AddToList(int id, string nome, string descricao, int categoria, int status)
+        {
+            _lstConta.Add(new Conta(id, nome, descricao, categoria, status));
         }
 
         public List<Conta> GeraContas()

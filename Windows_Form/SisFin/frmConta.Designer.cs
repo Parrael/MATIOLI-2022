@@ -103,7 +103,6 @@ namespace SisFin
             this.dgConta.Size = new System.Drawing.Size(613, 220);
             this.dgConta.TabIndex = 3;
             this.dgConta.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgConta_RowEnter);
-
             // 
             // cboCategoria
             // 

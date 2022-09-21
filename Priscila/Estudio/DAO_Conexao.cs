@@ -16,13 +16,23 @@ namespace Estudio
             try
             {
                 con = new MySqlConnection("server=" + local + ";User ID=" + user + ";database=" + banco + ";password=" + senha); //se precisar coloca SslMode=none;
-                con.Open();
                 retorno = true;
              }catch (Exception e){
                 Console.WriteLine(e.Message);
              }
                 return retorno;
          }   
+
+        public static Boolean cadUsuario(String usuario, String senha, int tipo)
+        {
+            bool cad = false;
+            try
+            {
+                con.Open();
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Login ()");
+                
+            }
+        }
         
         public static int login(String usuario, String senha)
         {
@@ -30,7 +40,7 @@ namespace Estudio
             try
             {
                 con.Open();
-                MySqlCommand login = new MySqlCommand("Select * from Estudio_login where usuario ='" + usuario + "'and senha='" + senha + "'", con);
+                MySqlCommand login = new MySqlCommand("Select * from Estudio_Login where usuario ='" + usuario + "' and senha='" + senha + "'", con);
                 MySqlDataReader resultado = login.ExecuteReader();
                 if (resultado.Read())
                 {

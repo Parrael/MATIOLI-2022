@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastraAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastraAluno.Designer.cs">
+      <DependentUpon>CadastraAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastraUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastraUsuario.Designer.cs">
+      <DependentUpon>CadastraUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO_Conexao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -58,6 +70,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastraAluno.resx">
+      <DependentUpon>CadastraAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastraUsuario.resx">
+      <DependentUpon>CadastraUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

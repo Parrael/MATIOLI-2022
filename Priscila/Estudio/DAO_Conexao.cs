@@ -9,7 +9,7 @@ namespace Estudio
 {
     class DAO_Conexao
     {
-        private static MySqlConnection con;
+        public static MySqlConnection con;
         
         public static Boolean getConexao(String local, String banco, String user, String senha){
             Boolean retorno = false;
@@ -29,9 +29,21 @@ namespace Estudio
             try
             {
                 con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Login ()");
-                
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Login (usuario, senha, tipo) values (" + usuario + "','" + senha + "','" + tipo + ")" + con);
+                insere.ExecuteNonQuery();
+                cad = true;
+
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return cad;
+
         }
         
         public static int login(String usuario, String senha)

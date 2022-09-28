@@ -30,13 +30,13 @@ namespace Estudio
         private void InitializeComponent()
         {
             this.grpDados2 = new System.Windows.Forms.GroupBox();
+            this.btnCadastrarUsuario = new System.Windows.Forms.Button();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
-            this.btnCadastrarUsuario = new System.Windows.Forms.Button();
             this.grpDados2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@ namespace Estudio
             this.grpDados2.Controls.Add(this.btnCadastrarUsuario);
             this.grpDados2.Controls.Add(this.cbTipo);
             this.grpDados2.Controls.Add(this.txtSenha);
-            this.grpDados2.Controls.Add(this.textBox1);
+            this.grpDados2.Controls.Add(this.txtUsuario);
             this.grpDados2.Controls.Add(this.lblTipo);
             this.grpDados2.Controls.Add(this.lblSenha);
             this.grpDados2.Controls.Add(this.lblUsuario);
@@ -56,6 +56,42 @@ namespace Estudio
             this.grpDados2.TabIndex = 0;
             this.grpDados2.TabStop = false;
             this.grpDados2.Text = "Dados";
+            // 
+            // btnCadastrarUsuario
+            // 
+            this.btnCadastrarUsuario.Location = new System.Drawing.Point(262, 130);
+            this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
+            this.btnCadastrarUsuario.Size = new System.Drawing.Size(145, 26);
+            this.btnCadastrarUsuario.TabIndex = 6;
+            this.btnCadastrarUsuario.Text = "Cadastrar";
+            this.btnCadastrarUsuario.UseVisualStyleBackColor = true;
+            this.btnCadastrarUsuario.Click += new System.EventHandler(this.btnCadastrarUsuario_Click);
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Administrador",
+            "Restrito"});
+            this.cbTipo.Location = new System.Drawing.Point(100, 130);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(121, 28);
+            this.cbTipo.TabIndex = 5;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(100, 85);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(307, 26);
+            this.txtSenha.TabIndex = 4;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(100, 35);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(307, 26);
+            this.txtUsuario.TabIndex = 3;
             // 
             // lblTipo
             // 
@@ -89,41 +125,6 @@ namespace Estudio
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario: ";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(307, 26);
-            this.textBox1.TabIndex = 3;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(100, 85);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(307, 26);
-            this.txtSenha.TabIndex = 4;
-            // 
-            // cbTipo
-            // 
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Items.AddRange(new object[] {
-            "Administrador",
-            "Restrito"});
-            this.cbTipo.Location = new System.Drawing.Point(100, 130);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(121, 28);
-            this.cbTipo.TabIndex = 5;
-            // 
-            // btnCadastrarUsuario
-            // 
-            this.btnCadastrarUsuario.Location = new System.Drawing.Point(262, 130);
-            this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
-            this.btnCadastrarUsuario.Size = new System.Drawing.Size(145, 26);
-            this.btnCadastrarUsuario.TabIndex = 6;
-            this.btnCadastrarUsuario.Text = "Cadastrar";
-            this.btnCadastrarUsuario.UseVisualStyleBackColor = true;
-            // 
             // frmCadastraUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +149,6 @@ namespace Estudio
         private System.Windows.Forms.Button btnCadastrarUsuario;
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsuario;
     }
 }

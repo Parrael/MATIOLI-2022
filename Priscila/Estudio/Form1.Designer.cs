@@ -31,16 +31,17 @@ namespace Estudio
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gpbValidacao = new System.Windows.Forms.GroupBox();
             this.btnLogar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.cadastrarAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gpbValidacao.SuspendLayout();
             this.SuspendLayout();
@@ -61,11 +62,37 @@ namespace Estudio
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarAlunoToolStripMenuItem,
             this.cadastrarLoginToolStripMenuItem,
+            this.excluirAlunoToolStripMenuItem,
             this.toolStripMenuItem1,
             this.sairToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // cadastrarAlunoToolStripMenuItem
+            // 
+            this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
+            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
+            this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click);
+            // 
+            // cadastrarLoginToolStripMenuItem
+            // 
+            this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
+            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
+            this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
             // 
             // gpbValidacao
             // 
@@ -134,30 +161,12 @@ namespace Estudio
             this.lblSenha.TabIndex = 0;
             this.lblSenha.Text = "Senha";
             // 
-            // cadastrarAlunoToolStripMenuItem
+            // excluirAlunoToolStripMenuItem
             // 
-            this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
-            this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click);
-            // 
-            // cadastrarLoginToolStripMenuItem
-            // 
-            this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
-            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
-            this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.excluirAlunoToolStripMenuItem.Name = "excluirAlunoToolStripMenuItem";
+            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirAlunoToolStripMenuItem.Text = "Excluir Aluno";
+            this.excluirAlunoToolStripMenuItem.Click += new System.EventHandler(this.excluirAlunoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -196,6 +205,7 @@ namespace Estudio
         private System.Windows.Forms.ToolStripMenuItem cadastrarLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirAlunoToolStripMenuItem;
     }
 }
 

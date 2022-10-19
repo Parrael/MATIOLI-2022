@@ -25,7 +25,7 @@ namespace Estudio
 
         public Aluno(String cpf, String nome, String rua, String numero, String bairro, String complemento, String CEP, String cidade, String estado, String telefone, String email)
         {
-            DAO_Conexao.getConexao("143.106.241.3", "cl201286", "cl201286", "cl*08082005");
+            //DAO_Conexao.getConexao("143.106.241.3", "cl201286", "cl201286", "cl*08082005");
             setCpf(cpf);
             setNome(nome);
             setRua(rua);
@@ -43,13 +43,18 @@ namespace Estudio
         {
         }
 
+        public Aluno(String cpf)
+        {
+            setCpf(cpf);
+        }
+
         public bool CadastraAluno()
         {
             bool cad = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno) values ('" + cpf + "','" + nome + "','" + rua + "','" + numero + "','" + bairro + "','" + complemento + "','" + cep + "','" + cidade + "','" + estado + "','" + telefone + "','" + email + ")" + DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno) values ('" + cpf + "','" + nome + "','" + rua + "','" + numero + "','" + bairro + "','" + complemento + "','" + cep + "','" + cidade + "','" + estado + "','" + telefone + "','" + email + "')", DAO_Conexao.con);
                 //insere.Parameters.AddWithValue("foto", this.foto);
                 insere.ExecuteNonQuery();
                 cad = true;
@@ -63,6 +68,50 @@ namespace Estudio
             }
             return cad;
 
+        }
+
+        public bool consultaAluno()
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno= '" + cpf + "'", DAO_Conexao.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return existe;
+        }
+
+        public bool excluirAluno()
+        {
+            bool exc = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand excluir = new MySqlCommand("update Estudio_Aluno set ativoAluno = 1 where CPFAluno = '" + cpf + "'", DAO_Conexao.con);
+                excluir.ExecuteNonQuery();
+                exc = true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return exc;
         }
 
         //Getters e setters

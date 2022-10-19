@@ -90,6 +90,7 @@ namespace Estudio
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados cadastrais";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtEmail
             // 
@@ -113,7 +114,7 @@ namespace Estudio
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(107, 273);
-            this.txtTelefone.Mask = "(__)_____-____";
+            this.txtTelefone.Mask = "(00)00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(125, 26);
             this.txtTelefone.TabIndex = 20;
@@ -158,7 +159,7 @@ namespace Estudio
             // 
             this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCep.Location = new System.Drawing.Point(107, 226);
-            this.txtCep.Mask = "__.___-___";
+            this.txtCep.Mask = "00.000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(100, 26);
             this.txtCep.TabIndex = 15;
@@ -227,10 +228,11 @@ namespace Estudio
             // 
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.Location = new System.Drawing.Point(107, 41);
-            this.txtCpf.Mask = "___.___.___-__";
+            this.txtCpf.Mask = "000.000.000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(125, 26);
             this.txtCpf.TabIndex = 7;
+            this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCpf_KeyPress);
             // 
             // btnCadastrarAluno
             // 
@@ -246,11 +248,11 @@ namespace Estudio
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.Location = new System.Drawing.Point(6, 274);
+            this.lblTelefone.Location = new System.Drawing.Point(12, 273);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(79, 20);
+            this.lblTelefone.Size = new System.Drawing.Size(66, 20);
             this.lblTelefone.TabIndex = 5;
-            this.lblTelefone.Text = "Telefone: ";
+            this.lblTelefone.Text = "Celular: ";
             // 
             // lblCep
             // 

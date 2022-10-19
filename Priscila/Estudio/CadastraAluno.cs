@@ -31,5 +31,26 @@ namespace Estudio
                 MessageBox.Show("Erro de Cadastro!");
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Aluno aluno = new Aluno(txtCpf.Text);
+            if(e.KeyChar == 13)
+            {
+                if (aluno.consultaAluno())
+                {
+                    MessageBox.Show("Aluno já cadastrado");
+                }
+                else
+                {
+                    txtNome.Focus();
+                }
+            }
+        }
     }
 }

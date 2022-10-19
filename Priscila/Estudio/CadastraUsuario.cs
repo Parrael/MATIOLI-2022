@@ -29,5 +29,10 @@ namespace Estudio
             else
                 MessageBox.Show("Erro de cadastro");
         }
+
+        private void grpDados2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

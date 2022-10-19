@@ -56,6 +56,7 @@ namespace Estudio
             this.grpDados2.TabIndex = 0;
             this.grpDados2.TabStop = false;
             this.grpDados2.Text = "Dados";
+            this.grpDados2.Enter += new System.EventHandler(this.grpDados2_Enter);
             // 
             // btnCadastrarUsuario
             // 

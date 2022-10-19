@@ -61,5 +61,12 @@ namespace Estudio
             frmCadastraAluno.MdiParent = this;
             frmCadastraAluno.Show();
         }
+
+        private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmExcluir frmExcluir = new FrmExcluir();
+            frmExcluir.MdiParent = this;
+            frmExcluir.Show();
+        }
     }
 }

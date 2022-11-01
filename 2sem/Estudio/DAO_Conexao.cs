@@ -43,8 +43,8 @@ namespace Estudio
                 con.Close();
             }
             return cad;
-
         }
+
         
         public static int login(String usuario, String senha)
         {

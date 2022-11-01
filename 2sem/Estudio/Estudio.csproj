@@ -49,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtualizarModalidade.Designer.cs">
+      <DependentUpon>AtualizarModalidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastraAluno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CadastraAluno.Designer.cs">
       <DependentUpon>CadastraAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastraModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastraModalidade.Designer.cs">
+      <DependentUpon>CadastraModalidade.cs</DependentUpon>
     </Compile>
     <Compile Include="CadastraUsuario.cs">
       <SubType>Form</SubType>
@@ -63,6 +75,12 @@
     </Compile>
     <Compile Include="Aluno.cs" />
     <Compile Include="DAO_Conexao.cs" />
+    <Compile Include="ExcluiModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcluiModalidade.Designer.cs">
+      <DependentUpon>ExcluiModalidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,13 +93,23 @@
     <Compile Include="frmExcluir.Designer.cs">
       <DependentUpon>frmExcluir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AtualizarModalidade.resx">
+      <DependentUpon>AtualizarModalidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastraAluno.resx">
       <DependentUpon>CadastraAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastraModalidade.resx">
+      <DependentUpon>CadastraModalidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastraUsuario.resx">
       <DependentUpon>CadastraUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcluiModalidade.resx">
+      <DependentUpon>ExcluiModalidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

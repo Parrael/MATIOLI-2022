@@ -21,5 +21,15 @@ namespace Estudio
         {
 
         }
+
+        private void btnCadastra_Click(object sender, EventArgs e)
+        {
+            Modalidade modalidade = new Modalidade(txtDescricao.Text, double.Parse(txtPreco.Text), int.Parse(txtQtdAluno.Text), int.Parse(txtQtdAula.Text));
+            if (modalidade.cadastrarModalidade())
+                MessageBox.Show("Cadastro realizado com sucesso!");
+            else
+                MessageBox.Show("Falha ao cadastrar modalidade!");
+
+        }
     }
 }

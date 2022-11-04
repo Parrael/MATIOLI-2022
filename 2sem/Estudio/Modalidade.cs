@@ -36,7 +36,7 @@ namespace Estudio
             this.descricao = descricao;
         }
 
-        public bool cadastrarModalidade(String descricao, double preco, int qtdAluno, int qtdAula)
+        public bool cadastrarModalidade()
         {
             bool cad = false;
             try
@@ -64,17 +64,67 @@ namespace Estudio
 
         public MySqlDataReader consultarTodasModalidade()
         {
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand busca = new MySqlCommand("select * from Estudio_Modalidado");
+                MySqlDataReader buscar = busca.ExecuteReader();
+                return buscar;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
 
         }
 
         public bool atualizarModalidade()
         {
-
+            bool cad = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand atualiza = new MySqlCommand("update into Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas) values (" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula + ")" + DAO_Conexao.con);
+                //deve ter erro nessa linha de SQL
+                atualiza.ExecuteNonQuery();
+                cad = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return cad;
         }
 
         public bool excluirModalidade()
         {
-
+            bool cad = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand exclui = new MySqlCommand("delete * into Estudio_Modalidade where descricao like "+ descricao + ";" + DAO_Conexao.con);
+                //deve ter erro nessa linha de SQL
+                exclui.ExecuteNonQuery();
+                cad = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return cad;
         }
     }
 }

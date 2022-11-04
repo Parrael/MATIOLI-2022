@@ -30,9 +30,9 @@ namespace Estudio
         private void InitializeComponent()
         {
             this.grpModalidade = new System.Windows.Forms.GroupBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.grpModalidade.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,16 @@ namespace Estudio
             this.grpModalidade.TabIndex = 0;
             this.grpModalidade.TabStop = false;
             this.grpModalidade.Text = "Modalidades";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(27, 90);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(316, 29);
+            this.btnExcluir.TabIndex = 2;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // lblDescricao
             // 
@@ -65,15 +75,6 @@ namespace Estudio
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(234, 28);
             this.comboBox1.TabIndex = 0;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(27, 90);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(316, 29);
-            this.btnExcluir.TabIndex = 2;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // frmExcluiModalidade
             // 

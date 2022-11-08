@@ -33,21 +33,21 @@ namespace Estudio
             this.txtQtdAula = new System.Windows.Forms.TextBox();
             this.txtQtdAluno = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnAtualiza = new System.Windows.Forms.Button();
             this.lblQtdAula = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblQtdAluno = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbDescricao = new System.Windows.Forms.ComboBox();
             this.grpCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpCadastro
             // 
+            this.grpCadastro.Controls.Add(this.cbDescricao);
             this.grpCadastro.Controls.Add(this.txtQtdAula);
             this.grpCadastro.Controls.Add(this.txtQtdAluno);
             this.grpCadastro.Controls.Add(this.txtPreco);
-            this.grpCadastro.Controls.Add(this.txtDescricao);
             this.grpCadastro.Controls.Add(this.btnAtualiza);
             this.grpCadastro.Controls.Add(this.lblQtdAula);
             this.grpCadastro.Controls.Add(this.lblDescricao);
@@ -81,13 +81,6 @@ namespace Estudio
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(300, 26);
             this.txtPreco.TabIndex = 6;
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(114, 34);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(269, 26);
-            this.txtDescricao.TabIndex = 5;
             // 
             // btnAtualiza
             // 
@@ -138,6 +131,14 @@ namespace Estudio
             this.label1.TabIndex = 1;
             this.label1.Text = "Preco";
             // 
+            // cbDescricao
+            // 
+            this.cbDescricao.FormattingEnabled = true;
+            this.cbDescricao.Location = new System.Drawing.Point(114, 32);
+            this.cbDescricao.Name = "cbDescricao";
+            this.cbDescricao.Size = new System.Drawing.Size(269, 28);
+            this.cbDescricao.TabIndex = 9;
+            // 
             // frmAtualizarModalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +148,7 @@ namespace Estudio
             this.Controls.Add(this.grpCadastro);
             this.Name = "frmAtualizarModalidade";
             this.Text = "AtualizarModalidade";
+            this.Load += new System.EventHandler(this.frmAtualizarModalidade_Load);
             this.grpCadastro.ResumeLayout(false);
             this.grpCadastro.PerformLayout();
             this.ResumeLayout(false);
@@ -159,11 +161,11 @@ namespace Estudio
         private System.Windows.Forms.TextBox txtQtdAula;
         private System.Windows.Forms.TextBox txtQtdAluno;
         private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnAtualiza;
         private System.Windows.Forms.Label lblQtdAula;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblQtdAluno;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbDescricao;
     }
 }

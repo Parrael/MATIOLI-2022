@@ -12,6 +12,8 @@ namespace Estudio
 {
     public partial class Form1 : Form
     {
+        private bool atualiza;
+
         public Form1()
         {
             InitializeComponent();
@@ -50,38 +52,64 @@ namespace Estudio
 
         private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadastraUsuario frmCadastraUsuario = new frmCadastraUsuario();
-            frmCadastraUsuario.MdiParent = this;
-            frmCadastraUsuario.Show();
+            if (Application.OpenForms.OfType<frmCadastraUsuario>().Count() == 0)
+            {
+                frmCadastraUsuario frmCadastraUsuario = new frmCadastraUsuario();
+                frmCadastraUsuario.MdiParent = this;
+                frmCadastraUsuario.Show();
+            }
         }
 
         private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadastraAluno frmCadastraAluno = new frmCadastraAluno();
-            frmCadastraAluno.MdiParent = this;
-            frmCadastraAluno.Show();
+            if (Application.OpenForms.OfType<frmCadastraAluno>().Count() == 0)
+            {
+                frmCadastraAluno frmCadastraAluno = new frmCadastraAluno();
+                frmCadastraAluno.MdiParent = this;
+                frmCadastraAluno.Show();
+            }
         }
 
         private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmExcluir frmExcluir = new FrmExcluir();
-            frmExcluir.MdiParent = this;
-            frmExcluir.Show();
+            if (Application.OpenForms.OfType<FrmExcluir>().Count() == 0)
+            {
+                FrmExcluir frmExcluir = new FrmExcluir();
+                frmExcluir.MdiParent = this;
+                frmExcluir.Show();
+            }
         }
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadastraModalidade frmCadastraModalidade = new frmCadastraModalidade();
-            frmCadastraModalidade.MdiParent = this;
-            frmCadastraModalidade.Show();
+            if (Application.OpenForms.OfType<frmCadastraModalidade>().Count() == 0)
+            {
+                frmCadastraModalidade frmCadastraModalidade = new frmCadastraModalidade();
+                frmCadastraModalidade.MdiParent = this;
+                frmCadastraModalidade.Show();
+            }
         }
 
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade();
-            frmAtualizarModalidade.MdiParent = this;
-            frmAtualizarModalidade.Show();
+            if (Application.OpenForms.OfType<frmAtualizarModalidade>().Count() == 0)
+            {
+                frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = true);
+                frmAtualizarModalidade.MdiParent = this;
+                frmAtualizarModalidade.Show();
+                
+            }
+        }
 
+        public void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmAtualizarModalidade>().Count() == 0)
+            {
+                frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = false);
+                frmAtualizarModalidade.MdiParent = this;
+                frmAtualizarModalidade.Show();
+                
+            }
         }
     }
 }

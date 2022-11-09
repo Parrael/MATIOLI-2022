@@ -111,5 +111,15 @@ namespace Estudio
                 
             }
         }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmAtualizarModalidade>().Count() == 0)
+            {
+                frmExcluiModalidade frmExcluiModalidade = new frmExcluiModalidade();
+                frmExcluiModalidade.MdiParent = this;
+                frmExcluiModalidade.Show();
+            }
+        }
     }
 }

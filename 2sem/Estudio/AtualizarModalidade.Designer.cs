@@ -68,6 +68,7 @@ namespace Estudio
             this.cbDescricao.Name = "cbDescricao";
             this.cbDescricao.Size = new System.Drawing.Size(269, 28);
             this.cbDescricao.TabIndex = 9;
+            this.cbDescricao.SelectedIndexChanged += new System.EventHandler(this.cbDescricao_SelectedIndexChanged);
             // 
             // txtQtdAula
             // 
@@ -98,6 +99,7 @@ namespace Estudio
             this.btnAtualiza.TabIndex = 4;
             this.btnAtualiza.Text = "Atualizar";
             this.btnAtualiza.UseVisualStyleBackColor = true;
+            this.btnAtualiza.Click += new System.EventHandler(this.btnAtualiza_Click);
             // 
             // lblQtdAula
             // 

@@ -42,7 +42,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand cadastra = new MySqlCommand("INSERT INTO Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas, ativa) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula +"','"+ 0 +"')" + DAO_Conexao.con);
+                MySqlCommand cadastra = new MySqlCommand("INSERT INTO Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas, ativa) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula +"','"+ 0 +"')", DAO_Conexao.con);
                 cadastra.ExecuteNonQuery();
                 cad = true;
             }
@@ -62,7 +62,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand busca = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE descricao LIKE '" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand busca = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE ativa=0 AND descricao LIKE '" + descricao + "'", DAO_Conexao.con);
                 MySqlDataReader buscar = busca.ExecuteReader();
                 return buscar;
             }
@@ -73,29 +73,29 @@ namespace Estudio
             }
             finally
             {
-                DAO_Conexao.con.Close();
+                /*DAO_Conexao.con.Close();*/
             }
         }
 
         public MySqlDataReader consultarTodasModalidade()
         {
+            MySqlDataReader buscar = null;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand busca = new MySqlCommand("SELECT * FROM Estudio_Modalidade");
-                MySqlDataReader buscar = busca.ExecuteReader();
-                return buscar;
+                MySqlCommand busca = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE ativa=0 ORDER BY descricao", DAO_Conexao.con);
+                buscar = busca.ExecuteReader();
+               
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return null;
             }
             finally
             {
-                DAO_Conexao.con.Close();
+                /*DAO_Conexao.con.Close();*/
             }
-
+            return buscar;
         }
 
         public bool atualizarModalidade()
@@ -104,8 +104,9 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("UPDATE INTO Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula + "')" + DAO_Conexao.con);
+                /* MySqlCommand atualiza = new MySqlCommand("UPDATE Estudio_Modalidade SET (descricao, preco, qtdAlunos, qtdAulas) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula + "')", DAO_Conexao.con); */
                 //deve ter erro nessa linha de SQL
+                MySqlCommand atualiza = new MySqlCommand("UPDATE Estudio_Modalidade SET preco =" + preco + ", qtdAlunos =" + QtdAluno + ", qtdAulas =" + qtdAula + " WHERE descricao = '" + descricao + "'", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -126,7 +127,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("UPDATE ativa=1 INTO Estudio_Modalidade WHERE descricao LIKE '"+ descricao + "'" + DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("UPDATE Estudio_Modalidade SET ativa=1 WHERE descricao LIKE '" + descricao + "'", DAO_Conexao.con);
                 //deve ter erro nessa linha de SQL
                 exclui.ExecuteNonQuery();
                 cad = true;

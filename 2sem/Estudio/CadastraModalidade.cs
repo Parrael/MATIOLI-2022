@@ -34,7 +34,7 @@ namespace Estudio
                 MessageBox.Show("Cadastro realizado com sucesso!");
             else
                 MessageBox.Show("Falha ao cadastrar modalidade!");
-
+           // DAO_Conexao.con.Close();
         }
     }
 }

@@ -23,6 +23,15 @@ namespace Estudio
                 txtQtdAula.Enabled = false;
             }
         }
+        
+        private void btnAtualiza_Click(object sender, EventArgs e)
+        {
+            Modalidade modalidade = new Modalidade(txtDescricao.Text, double.Parse(txtPreco.Text), int.Parse(txtQtdAluno.Text), int.Parse(txtQtdAula.Text) );
+            if (modalidade.atualizarModalidade())
+                MessageBox.Show("Atualização bem sucedida!");
+            else
+                MessageBox.Show("Não foi possível atualizar!");
+        }
 
         private void frmAtualizarModalidade_Load(object sender, EventArgs e)
         {

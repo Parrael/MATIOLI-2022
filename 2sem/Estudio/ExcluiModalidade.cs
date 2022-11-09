@@ -24,9 +24,9 @@ namespace Estudio
             //Fazer oq estiver selecionado no ComboBox ser excluido, mandando para modalidade.excluirModalidade
             Modalidade modalidade = new Modalidade(cbDescricao.Text);
             if (modalidade.excluirModalidade())
-                MessageBox.Show("Deu certo fi");
+                MessageBox.Show("Exclusão concluída com sucesso!");
             else
-                MessageBox.Show("Deu errado fi");
+                MessageBox.Show("Falha na exclusão!");
 
             cbDescricao.Items.Clear();
             cbDescricao.Text = "";

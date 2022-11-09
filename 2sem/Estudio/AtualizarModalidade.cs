@@ -44,11 +44,11 @@ namespace Estudio
         {
             Modalidade modalidade = new Modalidade(cbDescricao.Text, double.Parse(txtPreco.Text), int.Parse(txtQtdAluno.Text), int.Parse(txtQtdAula.Text));
             if (modalidade.atualizarModalidade())
-                MessageBox.Show("Atualização bem sucedida!");
+                MessageBox.Show("Atualização concluída com sucesso!");
             else
-                MessageBox.Show("Não foi possível atualizar!");
+                MessageBox.Show("Falha na atualização!");
             cbDescricao.Items.Clear();
-            cbDescricao.Text = "";
+            cbDescricao.Text = "";  
             txtPreco.Text = "";
             txtQtdAluno.Text = "";
             txtQtdAula.Text = "";

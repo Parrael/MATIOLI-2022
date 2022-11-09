@@ -52,5 +52,10 @@ namespace Estudio
                 }
             }
         }
+
+        private void btnEscolher_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

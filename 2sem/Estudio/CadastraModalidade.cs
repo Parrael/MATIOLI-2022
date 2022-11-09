@@ -17,10 +17,6 @@ namespace Estudio
             InitializeComponent();
         }
 
-        private void frmCadastraModalidade_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCadastra_Click(object sender, EventArgs e)
         {
@@ -33,7 +29,7 @@ namespace Estudio
             if (modalidade.cadastrarModalidade())
                 MessageBox.Show("Cadastro realizado com sucesso!");
             else
-                MessageBox.Show("Falha ao cadastrar modalidade!");
+                MessageBox.Show("Falha no cadastro!");
            // DAO_Conexao.con.Close();
         }
     }

@@ -321,6 +321,7 @@ namespace Estudio
             this.btnEscolher.TabIndex = 2;
             this.btnEscolher.Text = "Escolher Foto";
             this.btnEscolher.UseVisualStyleBackColor = true;
+            this.btnEscolher.Click += new System.EventHandler(this.btnEscolher_Click);
             // 
             // frmCadastraAluno
             // 

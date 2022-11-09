@@ -12,21 +12,29 @@ namespace Estudio
 {
     public partial class frmAtualizarModalidade : Form
     {
-        public frmAtualizarModalidade(bool atualiza)
+        Modalidade modalidade = new Modalidade();
+        public frmAtualizarModalidade(String opcao)
         {
             InitializeComponent();
-            if (!atualiza)
+            if (opcao == "c")
             {
                 btnAtualiza.Enabled = false;
                 txtPreco.Enabled = false;
                 txtQtdAluno.Enabled = false;
                 txtQtdAula.Enabled = false;
+            }else{
+                btnAtualiza.Enabled = true;
+                txtPreco.Enabled = true;
+                txtQtdAluno.Enabled = true;
+                txtQtdAula.Enabled = true;
             }
+            cbDescricao.Text = Convert.ToString(modalidade.consultarTodasModalidade());
+
         }
-        
+
         private void btnAtualiza_Click(object sender, EventArgs e)
         {
-            Modalidade modalidade = new Modalidade(txtDescricao.Text, double.Parse(txtPreco.Text), int.Parse(txtQtdAluno.Text), int.Parse(txtQtdAula.Text) );
+            Modalidade modalidade = new Modalidade(cbDescricao.Text, double.Parse(txtPreco.Text), int.Parse(txtQtdAluno.Text), int.Parse(txtQtdAula.Text) );
             if (modalidade.atualizarModalidade())
                 MessageBox.Show("Atualização bem sucedida!");
             else
@@ -37,5 +45,6 @@ namespace Estudio
         {
 
         }
+
     }
 }

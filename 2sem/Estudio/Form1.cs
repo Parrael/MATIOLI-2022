@@ -12,7 +12,7 @@ namespace Estudio
 {
     public partial class Form1 : Form
     {
-        private bool atualiza;
+        private String atualiza;
 
         public Form1()
         {
@@ -94,7 +94,7 @@ namespace Estudio
         {
             if (Application.OpenForms.OfType<frmAtualizarModalidade>().Count() == 0)
             {
-                frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = true);
+                frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = "c");
                 frmAtualizarModalidade.MdiParent = this;
                 frmAtualizarModalidade.Show();
                 
@@ -105,7 +105,7 @@ namespace Estudio
         {
             if (Application.OpenForms.OfType<frmAtualizarModalidade>().Count() == 0)
             {
-                frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = false);
+                frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = "a");
                 frmAtualizarModalidade.MdiParent = this;
                 frmAtualizarModalidade.Show();
                 

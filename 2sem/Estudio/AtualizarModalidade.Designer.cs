@@ -30,6 +30,7 @@ namespace Estudio
         private void InitializeComponent()
         {
             this.grpCadastro = new System.Windows.Forms.GroupBox();
+            this.cbDescricao = new System.Windows.Forms.ComboBox();
             this.txtQtdAula = new System.Windows.Forms.TextBox();
             this.txtQtdAluno = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@ namespace Estudio
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblQtdAluno = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbDescricao = new System.Windows.Forms.ComboBox();
             this.grpCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,14 @@ namespace Estudio
             this.grpCadastro.TabIndex = 1;
             this.grpCadastro.TabStop = false;
             this.grpCadastro.Text = "Modalidades";
+            // 
+            // cbDescricao
+            // 
+            this.cbDescricao.FormattingEnabled = true;
+            this.cbDescricao.Location = new System.Drawing.Point(114, 32);
+            this.cbDescricao.Name = "cbDescricao";
+            this.cbDescricao.Size = new System.Drawing.Size(269, 28);
+            this.cbDescricao.TabIndex = 9;
             // 
             // txtQtdAula
             // 
@@ -130,14 +138,6 @@ namespace Estudio
             this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Preco";
-            // 
-            // cbDescricao
-            // 
-            this.cbDescricao.FormattingEnabled = true;
-            this.cbDescricao.Location = new System.Drawing.Point(114, 32);
-            this.cbDescricao.Name = "cbDescricao";
-            this.cbDescricao.Size = new System.Drawing.Size(269, 28);
-            this.cbDescricao.TabIndex = 9;
             // 
             // frmAtualizarModalidade
             // 

@@ -42,7 +42,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand cadastra = new MySqlCommand("INSERT INTO Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula + "')" + DAO_Conexao.con);
+                MySqlCommand cadastra = new MySqlCommand("INSERT INTO Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas, ativa) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula +"','"+ 0 +"')" + DAO_Conexao.con);
                 cadastra.ExecuteNonQuery();
                 cad = true;
             }
@@ -62,7 +62,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand busca = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE '" + descricao +"'", DAO_Conexao.con);
+                MySqlCommand busca = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE descricao LIKE '" + descricao + "'", DAO_Conexao.con);
                 MySqlDataReader buscar = busca.ExecuteReader();
                 return buscar;
             }
@@ -126,7 +126,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("DELETE * INTO Estudio_Modalidade WHERE descricao LIKE '"+ descricao + "'" + DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("UPDATE ativa=1 INTO Estudio_Modalidade WHERE descricao LIKE '"+ descricao + "'" + DAO_Conexao.con);
                 //deve ter erro nessa linha de SQL
                 exclui.ExecuteNonQuery();
                 cad = true;

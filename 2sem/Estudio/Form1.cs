@@ -26,7 +26,7 @@ namespace Estudio
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLogar_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace Estudio
                 frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = "c");
                 frmAtualizarModalidade.MdiParent = this;
                 frmAtualizarModalidade.Show();
-                
+
             }
         }
 
@@ -108,7 +108,7 @@ namespace Estudio
                 frmAtualizarModalidade frmAtualizarModalidade = new frmAtualizarModalidade(atualiza = "a");
                 frmAtualizarModalidade.MdiParent = this;
                 frmAtualizarModalidade.Show();
-                
+
             }
         }
 
@@ -119,6 +119,27 @@ namespace Estudio
                 frmExcluiModalidade frmExcluiModalidade = new frmExcluiModalidade();
                 frmExcluiModalidade.MdiParent = this;
                 frmExcluiModalidade.Show();
+            }
+        }
+
+        private void cadastrarTurmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmAtualizarModalidade>().Count() == 0)
+            {
+                frmCadastraTurma frmCadastraTurma = new frmCadastraTurma();
+                frmCadastraTurma.MdiParent = this;
+                frmCadastraTurma.Show();
+            }
+        }
+
+        private void excluirTuraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmAtualizarModalidade>().Count() == 0)
+            {
+                frmExcluirTurma frmExcluirTurma = new frmExcluirTurma();
+                frmExcluirTurma.MdiParent = this;
+                frmExcluirTurma.Show();
+
             }
         }
     }

@@ -67,6 +67,12 @@
     <Compile Include="CadastraModalidade.Designer.cs">
       <DependentUpon>CadastraModalidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastraTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastraTurma.Designer.cs">
+      <DependentUpon>CadastraTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastraUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     </Compile>
     <Compile Include="ExcluiModalidade.Designer.cs">
       <DependentUpon>ExcluiModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExcluirTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcluirTurma.Designer.cs">
+      <DependentUpon>ExcluirTurma.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -96,6 +108,7 @@
     <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Turma.cs" />
     <EmbeddedResource Include="AtualizarModalidade.resx">
       <DependentUpon>AtualizarModalidade.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,11 +118,17 @@
     <EmbeddedResource Include="CadastraModalidade.resx">
       <DependentUpon>CadastraModalidade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastraTurma.resx">
+      <DependentUpon>CadastraTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastraUsuario.resx">
       <DependentUpon>CadastraUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExcluiModalidade.resx">
       <DependentUpon>ExcluiModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcluirTurma.resx">
+      <DependentUpon>ExcluirTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

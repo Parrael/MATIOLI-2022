@@ -28,6 +28,16 @@ namespace Estudio
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            int modalidade = Convert.ToInt32(txtModalidade.Text);
+            String professor = txtProfessor.Text;
+            String dia_semana = txtDiaSemana.Text;
+            String hora = txtHora.Text;
+            String alunosMatriculados = txtNoAluno.Text;
+            Turma turma = new Turma(modalidade, professor, dia_semana, hora, alunosMatriculados);
+            if (turma.cadastrarTurma())
+                MessageBox.Show("Cadastro realizado com sucesso!");
+            else
+                MessageBox.Show("Falha no cadastro!");
 
         }
         public void atualizaGrid()
@@ -40,13 +50,18 @@ namespace Estudio
             {
                 txtModalidade.Text = resultado["descricao"].ToString();
                 //claramente tem um erro 
-                idModalidade = int.Parse(resultado["idEstudio"]);
+                idModalidade = Convert.ToInt32(resultado["idEstudio"]);
             }
             DAO_Conexao.con.Close();
         }
         private void dgModalidade_SelectionChanged(object sender, EventArgs e)
         {
             atualizaGrid();
+        }
+
+        private void frmCadastraTurma_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

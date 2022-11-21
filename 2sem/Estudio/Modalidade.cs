@@ -42,7 +42,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand cadastra = new MySqlCommand("INSERT INTO Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas, ativa) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula +"','"+ 0 +"')", DAO_Conexao.con);
+                MySqlCommand cadastra = new MySqlCommand("INSERT INTO Estudio_Modalidade (descricao, preco, qtdAlunos, qtdAulas, ativa) VALUES ('" + descricao + "','" + preco + "','" + qtdAluno + "','" + qtdAula + "','" + 0 + "')", DAO_Conexao.con);
                 cadastra.ExecuteNonQuery();
                 cad = true;
             }
@@ -128,7 +128,6 @@ namespace Estudio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand exclui = new MySqlCommand("UPDATE Estudio_Modalidade SET ativa=1 WHERE descricao LIKE '" + descricao + "'", DAO_Conexao.con);
-                //deve ter erro nessa linha de SQL
                 exclui.ExecuteNonQuery();
                 cad = true;
             }

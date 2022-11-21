@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gpbTurmas = new System.Windows.Forms.GroupBox();
+            this.txtNoAluno = new System.Windows.Forms.TextBox();
+            this.lblNoAluno = new System.Windows.Forms.Label();
             this.txtHora = new System.Windows.Forms.MaskedTextBox();
             this.dgModalidade = new System.Windows.Forms.DataGridView();
             this.modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +42,6 @@
             this.lblProfessor = new System.Windows.Forms.Label();
             this.lblModalidade = new System.Windows.Forms.Label();
             this.txtModalidade = new System.Windows.Forms.TextBox();
-            this.lblNoAluno = new System.Windows.Forms.Label();
-            this.txtNoAluno = new System.Windows.Forms.TextBox();
             this.gpbTurmas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgModalidade)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,24 @@
             this.gpbTurmas.TabStop = false;
             this.gpbTurmas.Text = "Turmas";
             // 
+            // txtNoAluno
+            // 
+            this.txtNoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoAluno.Location = new System.Drawing.Point(152, 156);
+            this.txtNoAluno.Name = "txtNoAluno";
+            this.txtNoAluno.Size = new System.Drawing.Size(99, 26);
+            this.txtNoAluno.TabIndex = 12;
+            // 
+            // lblNoAluno
+            // 
+            this.lblNoAluno.AutoSize = true;
+            this.lblNoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoAluno.Location = new System.Drawing.Point(37, 156);
+            this.lblNoAluno.Name = "lblNoAluno";
+            this.lblNoAluno.Size = new System.Drawing.Size(108, 20);
+            this.lblNoAluno.TabIndex = 11;
+            this.lblNoAluno.Text = "No de Alunos:";
+            // 
             // txtHora
             // 
             this.txtHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,6 +103,7 @@
             this.dgModalidade.Name = "dgModalidade";
             this.dgModalidade.Size = new System.Drawing.Size(446, 164);
             this.dgModalidade.TabIndex = 9;
+            //this.dgModalidade.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgModalidade_CellClick);
             this.dgModalidade.SelectionChanged += new System.EventHandler(this.dgModalidade_SelectionChanged);
             // 
             // modalidade
@@ -166,24 +185,6 @@
             this.txtModalidade.Name = "txtModalidade";
             this.txtModalidade.Size = new System.Drawing.Size(310, 26);
             this.txtModalidade.TabIndex = 0;
-            // 
-            // lblNoAluno
-            // 
-            this.lblNoAluno.AutoSize = true;
-            this.lblNoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoAluno.Location = new System.Drawing.Point(37, 156);
-            this.lblNoAluno.Name = "lblNoAluno";
-            this.lblNoAluno.Size = new System.Drawing.Size(108, 20);
-            this.lblNoAluno.TabIndex = 11;
-            this.lblNoAluno.Text = "No de Alunos:";
-            // 
-            // txtNoAluno
-            // 
-            this.txtNoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoAluno.Location = new System.Drawing.Point(152, 156);
-            this.txtNoAluno.Name = "txtNoAluno";
-            this.txtNoAluno.Size = new System.Drawing.Size(99, 26);
-            this.txtNoAluno.TabIndex = 12;
             // 
             // frmCadastraTurma
             // 

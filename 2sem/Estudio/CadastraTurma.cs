@@ -40,7 +40,7 @@ namespace Estudio
                 MessageBox.Show("Falha no cadastro!");
 
         }
-        public void atualizaGrid()
+       /* public void atualizaGrid()
         {
             DAO_Conexao.con.Open();
             //tem um erro aqui e eu não sei onde 
@@ -53,15 +53,27 @@ namespace Estudio
                 idModalidade = Convert.ToInt32(resultado["idEstudio"]);
             }
             DAO_Conexao.con.Close();
-        }
+        }*/
         private void dgModalidade_SelectionChanged(object sender, EventArgs e)
         {
-            atualizaGrid();
+           
         }
 
         private void frmCadastraTurma_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgModalidade_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtModalidade.Text = dgModalidade.CurrentCell.Value.ToString();
+            Modalidade modalidade = new Modalidade(dgModalidade.CurrentCell.Value.ToString());
+            MySqlDataReader resultado = modalidade.consultarModalidade();
+            while (resultado.Read())
+            {
+                idModalidade = int.Parse(resultado["idEstudio"].ToString());
+                DAO_Conexao.con.Close();
+            }
         }
     }
 }

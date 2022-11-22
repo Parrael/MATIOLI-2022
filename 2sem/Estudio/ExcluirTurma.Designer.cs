@@ -83,6 +83,7 @@
             this.cbDias.Name = "cbDias";
             this.cbDias.Size = new System.Drawing.Size(275, 28);
             this.cbDias.TabIndex = 4;
+            this.cbDias.SelectedIndexChanged += new System.EventHandler(this.cbDias_SelectedIndexChanged);
             // 
             // cbModalidade
             // 
@@ -128,11 +129,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(553, 268);
             this.Controls.Add(this.gpTurmas);
             this.Name = "frmExcluirTurma";
             this.Text = "Excluir Turma";
+            this.Load += new System.EventHandler(this.frmExcluirTurma_Load);
             this.gpTurmas.ResumeLayout(false);
             this.gpTurmas.PerformLayout();
             this.ResumeLayout(false);

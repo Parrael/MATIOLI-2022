@@ -71,7 +71,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("UPDATE Estudio_Turma SET ativa=1 WHERE idModalidade LIKE '" + modalidade + "'AND diasemanaTurma LIKE '" + dia_semana + "'AND horaTurmac LIKE'" + hora + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("UPDATE Estudio_Turma SET ativa=1 WHERE idModalidade =" + modalidade + " AND diasemanaTurma ='" + dia_semana + "' AND horaTurma ='" + hora + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }
@@ -114,10 +114,32 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand buscar = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE ativa=0 AND idModalidade LIKE '" + modalidade + "'", DAO_Conexao.con);
+                MySqlCommand buscar = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE ativa=0 AND idModalidade = " + modalidade + "", DAO_Conexao.con);
                 MySqlDataReader resultado = buscar.ExecuteReader();
                 return resultado;
                 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                /*DAO_Conexao.con.Close();*/
+            }
+        }
+
+        public MySqlDataReader consultaTurmaDia()
+        {
+            //pelo idModalidade
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand buscar = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE ativa=0 AND idModalidade = " + modalidade + " AND  diasemanaTurma = '"+ dia_semana + "'", DAO_Conexao.con);
+                MySqlDataReader resultado = buscar.ExecuteReader();
+                return resultado;
+
             }
             catch (Exception ex)
             {

@@ -75,6 +75,7 @@ namespace Estudio
             this.cbDescricao.Name = "cbDescricao";
             this.cbDescricao.Size = new System.Drawing.Size(234, 28);
             this.cbDescricao.TabIndex = 0;
+            this.cbDescricao.SelectedIndexChanged += new System.EventHandler(this.cbDescricao_SelectedIndexChanged);
             // 
             // frmExcluiModalidade
             // 

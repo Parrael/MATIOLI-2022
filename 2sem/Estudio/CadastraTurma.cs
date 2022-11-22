@@ -17,13 +17,7 @@ namespace Estudio
         public frmCadastraTurma()
         {
             InitializeComponent();
-            Modalidade modalidade = new Modalidade();
-            MySqlDataReader resultado = modalidade.consultarTodasModalidade();
-            while (resultado.Read())
-            {
-                dgModalidade.Rows.Add(resultado["descricao"].ToString());
-            }
-            DAO_Conexao.con.Close();
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -39,41 +33,47 @@ namespace Estudio
             else
                 MessageBox.Show("Falha no cadastro!");
 
-        }
-       /* public void atualizaGrid()
-        {
-            DAO_Conexao.con.Open();
-            //tem um erro aqui e eu não sei onde 
-            MySqlCommand busca = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE ativa=0 AND descricao LIKE '" + dgModalidade.SelectedRows.ToString() + "'", DAO_Conexao.con);
-            MySqlDataReader resultado = busca.ExecuteReader();
-            while (resultado.Read())
+            cbDesejado.Refresh();
+            txtDiaSemana.Text = "";
+            txtHora.Text = "";
+            txtModalidade.Text = "";
+            txtNoAluno.Text = "";
+            txtProfessor.Text = "";
+
+            Modalidade modalidade1 = new Modalidade();
+            MySqlDataReader resultado4 = modalidade1.consultarTodasModalidade();
+            while (resultado4.Read())
             {
-                txtModalidade.Text = resultado["descricao"].ToString();
-                //claramente tem um erro 
-                idModalidade = Convert.ToInt32(resultado["idEstudio"]);
+                cbDesejado.Items.Add(resultado4["descricao"].ToString());
             }
             DAO_Conexao.con.Close();
-        }*/
-        private void dgModalidade_SelectionChanged(object sender, EventArgs e)
+        }
+
+        private void cbDesejado_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            int desejado = 0;
+            Modalidade modalidade = new Modalidade(cbDesejado.Text);
+            MySqlDataReader resultado = modalidade.consultarModalidade();
+            if (resultado.Read())
+            {
+                desejado = Convert.ToInt32(resultado["idEstudio"]);
+            }
+            DAO_Conexao.con.Close();
+
+            txtModalidade.Text = desejado.ToString();
+
         }
 
         private void frmCadastraTurma_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void dgModalidade_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtModalidade.Text = dgModalidade.CurrentCell.Value.ToString();
-            Modalidade modalidade = new Modalidade(dgModalidade.CurrentCell.Value.ToString());
-            MySqlDataReader resultado = modalidade.consultarModalidade();
+            Modalidade modalidade = new Modalidade();
+            MySqlDataReader resultado = modalidade.consultarTodasModalidade();
             while (resultado.Read())
             {
-                idModalidade = int.Parse(resultado["idEstudio"].ToString());
-                DAO_Conexao.con.Close();
+                cbDesejado.Items.Add(resultado["descricao"].ToString());
             }
+            DAO_Conexao.con.Close();
+            txtModalidade.Enabled = false;
         }
     }
 }

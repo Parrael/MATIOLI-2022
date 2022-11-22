@@ -13,51 +13,67 @@ namespace Estudio
 {
     public partial class frmExcluirTurma : Form
     {
-            int idModalidade = 0;
+            
         public frmExcluirTurma()
         {
             InitializeComponent();
-            Modalidade modalidade = new Modalidade();
-            MySqlDataReader resultado = modalidade.consultarTodasModalidade();
-            while (resultado.Read())
-            {
-                cbModalidade.Items.Add(resultado["descricao"].ToString());
-                idModalidade = Convert.ToInt32(resultado["idEstudio"]);
-            }
-            DAO_Conexao.con.Close();
-
-        }
-
-        private void frmExcluirTurma_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
-        {
             
-        }
 
-        
+        }     
 
         private void cbModalidade_SelectedIndexChanged_1(object sender, EventArgs e)
-        { 
-            Turma turma = new Turma(idModalidade);
-            MySqlDataReader resultado2 = turma.consultaTurma();
-            while (resultado2.Read())
+        {
+            cbDias.Items.Clear();
+
+            int modalidade2=0;
+            Modalidade modalidade = new Modalidade(cbModalidade.Text);
+            MySqlDataReader resultado = modalidade.consultarModalidade();
+            if (resultado.Read())
             {
-                cbDias.Items.Add(Convert.ToInt32(resultado2["diasemanaTurma"]));
-                cbHora.Items.Add(Convert.ToInt32(resultado2["horaTurma"]));
+                modalidade2 = Convert.ToInt32(resultado["idEstudio"]);
+            }
+            DAO_Conexao.con.Close();
+            Turma turma = new Turma(modalidade2);
+            MySqlDataReader resultado2 = turma.consultaTurma();
+            if (resultado2.Read())
+            {
+                cbDias.Items.Add((resultado2["diasemanaTurma"]).ToString());
+            } 
+            DAO_Conexao.con.Close();
+
+            cbDias.Refresh();
+
+        }
+
+        public void consultaId()
+        {
+            int modalidade2 = 0;
+            Modalidade modalidade = new Modalidade(cbModalidade.Text);
+            MySqlDataReader resultado = modalidade.consultarModalidade();
+            while (resultado.Read())
+            {
+                modalidade2 = Convert.ToInt32((resultado["idEstudio"]));
             }
             DAO_Conexao.con.Close();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int modalidade =  Convert.ToInt32(cbModalidade.Text);
+            int modalidade3 = 0;
+
+            Modalidade modalidade2 = new Modalidade(cbModalidade.Text);
+            MySqlDataReader resultado3 = modalidade2.consultarModalidade();
+            if (resultado3.Read())
+            {
+                modalidade3 = Convert.ToInt32(resultado3["idEstudio"]);
+            }
+            DAO_Conexao.con.Close();
+
+
             String dia_semana = cbDias.Text;
             String hora = cbHora.Text;
-            Turma turma = new Turma(modalidade, dia_semana, hora);
+
+            Turma turma = new Turma(modalidade3, dia_semana, hora);
             if (turma.excluirTurma())
                 MessageBox.Show("Exclusão concluída com sucesso!");
             else
@@ -67,14 +83,48 @@ namespace Estudio
             cbModalidade.Items.Clear();
             cbDias.Items.Clear();
             cbHora.Items.Clear();
-            Modalidade modalidade2 = new Modalidade();
-            MySqlDataReader resultado3 = modalidade2.consultarTodasModalidade();
-            while (resultado3.Read())
+
+            cbModalidade.Refresh();
+            cbHora.Refresh();
+            cbDias.Refresh();
+        }
+
+        private void cbDias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbHora.Items.Clear();
+            String diaSemana= "";
+            int modalidade2 = 0;
+            Modalidade modalidade = new Modalidade(cbModalidade.Text);
+            MySqlDataReader resultado = modalidade.consultarModalidade();
+            if (resultado.Read())
             {
-                cbModalidade.Items.Add(resultado3["descricao"].ToString());
-                idModalidade = Convert.ToInt32(resultado3["idEstudio"]);
+                modalidade2 = Convert.ToInt32(resultado["idEstudio"]);
             }
             DAO_Conexao.con.Close();
+
+            diaSemana = cbDias.Text;
+
+            Turma turma1 = new Turma(diaSemana, modalidade2);
+            MySqlDataReader resultado3 = turma1.consultaTurmaDia();
+            while (resultado3.Read())
+            {
+                cbHora.Items.Add((resultado3["horaTurma"]).ToString());
+            }
+            DAO_Conexao.con.Close();
+
+        }
+
+        private void frmExcluirTurma_Load(object sender, EventArgs e)
+        {
+            Modalidade modalidade = new Modalidade();
+            MySqlDataReader resultado = modalidade.consultarTodasModalidade();
+            while (resultado.Read())
+            {
+                cbModalidade.Items.Add(resultado["descricao"].ToString());
+            }
+            DAO_Conexao.con.Close();
+        
+           
         }
     }
 }

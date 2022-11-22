@@ -49,5 +49,10 @@ namespace Estudio
             }
             DAO_Conexao.con.Close();
         }
+
+        private void cbDescricao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

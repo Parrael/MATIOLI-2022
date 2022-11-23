@@ -33,6 +33,7 @@ namespace Estudio
             else
                 MessageBox.Show("Falha no cadastro!");
 
+            cbDesejado.Items.Clear();
             cbDesejado.Refresh();
             txtDiaSemana.Text = "";
             txtHora.Text = "";

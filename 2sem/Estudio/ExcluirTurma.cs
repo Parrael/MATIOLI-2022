@@ -87,6 +87,15 @@ namespace Estudio
             cbModalidade.Refresh();
             cbHora.Refresh();
             cbDias.Refresh();
+
+            Modalidade modalidade = new Modalidade();
+            MySqlDataReader resultado = modalidade.consultarTodasModalidade();
+            while (resultado.Read())
+            {
+                cbModalidade.Items.Add(resultado["descricao"].ToString());
+            }
+            DAO_Conexao.con.Close();
+
         }
 
         private void cbDias_SelectedIndexChanged(object sender, EventArgs e)
